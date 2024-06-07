@@ -77,6 +77,12 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 # open firefox
 bindsym $mod+f exec firefox -P 
 
+# open dolphin
+bindsym $mod+m exec dolphin
+
+# open tor-browser
+bindsym $mod+t exec torbrowser-launcher
+
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -127,6 +133,9 @@ bindsym $mod+a focus parent
 # open applications in particular workspace with these keybindings
 bindsym $secMod+1 workspace 1; exec kitty
 bindsym $secMod+2 workspace 2; exec firefox -P
+bindsym $secMod+Shift+2 workspace 2; exec torbrowser-launcher
+bindsym $secMod+3 workspace 3; exec cd Postman && ./Postman
+bindsym $secMod+4 workspace 4; exec spotify
 
 # lock screen
 bindsym $secMod+l exec ~/Scripts/screenlock.sh
