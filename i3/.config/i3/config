@@ -138,8 +138,13 @@ bindsym $secMod+Shift+2 workspace 2; exec torbrowser-launcher
 bindsym $secMod+3 workspace 3; exec cd Postman && ./Postman
 bindsym $secMod+4 workspace 4; exec spotify
 
-# lock screen
-bindsym $secMod+l exec ~/Scripts/screenlock.sh
+# open particular applications
+bindsym $secMod+t workspace 1; exec kitty -e tmux
+bindsym $secMod+g workspace 2; exec firefox github.com/SoumyabrataBanik
+bindsym $secMod+y workspace 2; exec firefox youtube.com
+bindsym $secMod+r workspace 2; exec firefox reddit.com
+bindsym $secMod+shift+g workspace 2; exec firefox gmail.com
+bindsym $secMod+m workspace 2; exec firefox moodlebppimt.ddns.net/login/index.php
 
 # focus the child container
 #bindsym $mod+d focus child
