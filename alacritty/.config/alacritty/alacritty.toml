@@ -13,6 +13,6 @@ blur = true
 
 [font]
 size = 8.0
-normal = { family = "VictorMono Nerd Font Mono", style = "Semibold" }
-bold = { family = "VictorMono Nerd Font Mono", style = "Bold" }
+normal = { family = "ComicShannsMono Nerd Font Propo", style = "Regular" }
+bold = { family = "ComicShannsMono Nerd Font Propo", style = "Bold" }
 italic = { family = "VictorMono Nerd Font Mono", style = "Medium Oblique" }
