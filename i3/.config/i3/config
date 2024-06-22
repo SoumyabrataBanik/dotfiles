@@ -62,13 +62,13 @@ floating_modifier $mod
 #tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym $mod+d exec --no-startup-id rofi -show drun
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -132,14 +132,14 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # open applications in particular workspace with these keybindings
-bindsym $secMod+1 workspace 1; exec kitty
+bindsym $secMod+1 workspace 1; exec alacritty
 bindsym $secMod+2 workspace 2; exec firefox -P
 bindsym $secMod+Shift+2 workspace 2; exec torbrowser-launcher
 bindsym $secMod+3 workspace 3; exec cd Postman && ./Postman
 bindsym $secMod+4 workspace 4; exec spotify
 
 # open particular applications
-bindsym $secMod+t workspace 1; exec kitty -e tmux
+bindsym $secMod+t workspace 1; exec alacritty -e tmux
 bindsym $secMod+g workspace 2; exec firefox github.com/SoumyabrataBanik
 bindsym $secMod+y workspace 2; exec firefox youtube.com
 bindsym $secMod+r workspace 2; exec firefox reddit.com
