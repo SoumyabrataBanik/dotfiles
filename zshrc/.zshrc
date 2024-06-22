@@ -1,3 +1,11 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Path to your oh-my-zsh installation.
 ZSH=/usr/share/oh-my-zsh/
 
@@ -5,7 +13,8 @@ ZSH=/usr/share/oh-my-zsh/
 #source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 #theme="powerlevel10k/powerlevel10k" 
 #ZSH_THEME="robbyrussell"
-eval "$(starship init zsh)"
+#eval "$(starship init zsh)"
+source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # List of plugins used
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions zsh-completions)
@@ -27,7 +36,7 @@ alias pqi="pacman -Qi"
 alias pR="sudo pacman -R"
 
 #update and poweroff alias
-alias Poweroff="cd ~/Scripts && sudo ./update-system.sh"
+alias Poweroff="~/Scripts/update-system.sh"
 
 #yay aliases:
 alias yi="yay -S"
@@ -37,8 +46,11 @@ alias yqi="yay -Qi"
 alias yR="yay -R"
 
 #bluetooth alias
-alias cbl="cd ~/Scripts && ./connect-bluetooth.sh"
-alias dbl="cd ~/Scripts && ./disconnect-bluetooth.sh"
+alias cbl="~/Scripts/connect-bluetooth.sh"
+alias dbl="~/Scripts/disconnect-bluetooth.sh"
+
+#alias to update mirror
+alias updateMirror="~/Scripts/update_mirrorlist.sh"
 
 # paths:
 export PATH="$HOME/.tmuxifier/bin:$PATH"
@@ -136,8 +148,10 @@ alias mkdir='mkdir -p'
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 #Display Pokemon
-pokemon-colorscripts --no-title -r 1,3,6
+#pokemon-colorscripts --no-title -r 1,3,6
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+neofetch

@@ -1,0 +1,10 @@
+configuration {
+    modes: "window,drun,run";
+    font: "JetBrainsMono Nerd Font";
+    terminal: "kitty";
+    icon-theme: "Papirus-Dark";
+    show-icons: true;
+    drun-display-format: "{icon} {name}";
+}
+
+@theme "gruvbox-dark-hard"
