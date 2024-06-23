@@ -53,6 +53,10 @@ return {
 			transparent_mode = true,
 			contrast = "hard",
 		})
+
 		vim.cmd("colorscheme gruvbox")
+		vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "#b8bb26", bold = false })
+		vim.api.nvim_set_hl(0, "LineNr", { fg = "orange", bold = false })
+		vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "#fabd2f", bold = false })
 	end,
 }
