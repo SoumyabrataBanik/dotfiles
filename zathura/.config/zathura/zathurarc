@@ -1,0 +1,8 @@
+include gruvboxTheme
+
+map k scroll up
+map j scroll down
+map <C-f> toggle_fullscreen
+map <C-q> quit
+
+set selection-clipboard clipboard
