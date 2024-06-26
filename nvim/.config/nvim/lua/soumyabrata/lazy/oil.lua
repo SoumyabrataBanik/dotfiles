@@ -11,8 +11,12 @@ return {
 				show_hidden = true,
 			},
 			keymaps = {
-				["<leader>e"] = "actions.close",
+				["<leader>e"] = { "actions.open_cwd", desc = "Open current working directory" },
+				["<leader>q"] = { "actions.close", desc = "Close oil" },
+				["<leader>tr"] = { "actions.toggle_trash", desc = "Open Trash" },
 			},
 		})
+
+		vim.keymap.set("n", "<leader>e", "<CMD>Oil<CR>", { desc = "Open Oil" })
 	end,
 }

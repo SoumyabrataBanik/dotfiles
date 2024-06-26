@@ -5,7 +5,7 @@ return {
 		local lualine = require("lualine")
 		lualine.setup({
 			options = {
-				theme = "gruvbox_dark",
+				theme = "night-owl",
 				section_separators = { left = "", right = "" },
 				component_separators = { left = "", right = "" },
 			},
@@ -49,7 +49,9 @@ return {
 						always_visible = false, -- Show diagnostics even if there are none.
 					},
 				},
-				lualine_x = { "filename", "encoding", "fileformat", "filetype" },
+				--lualine_x = { "filename", "encoding", "fileformat", "filetype" },
+				lualine_x = { "filetype", "fileformat" },
+				lualine_z = {},
 			},
 		})
 	end,
