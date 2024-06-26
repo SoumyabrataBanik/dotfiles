@@ -2,8 +2,11 @@
 {
     "layer": "bottom",
     "position": "bottom",
+    "mode": "dock",
     "height": 31,
     "space": 10,
+    "exclusive": true,
+    "passthrough": false,
     "margin-left": 4,
     "margin-right": 4,
     "modules-left": [
@@ -16,7 +19,8 @@
     "modules-right": [
         "group/hardware",
         "group/system",
-        "clock"
+        "clock",
+        "custom/power"
     ],
     "group/hardware": {
         "orientation": "horizontal",
@@ -99,7 +103,7 @@
     "battery": {
         "bat": "BAT0",
         "adapter": "ACO",
-        "interval": 1,
+        "interval": 60,
         "states": {
             "good": 95,
             "warning": 30,
@@ -143,4 +147,10 @@
             "on-scroll-down": "shift_down"
         }
     },
+    "custom/power": {
+        "format": "󰐥",
+        "tooltip": true,
+        "tooltip-format": "Power Button",
+        "on-click": "wlogout",
+    }
 }
