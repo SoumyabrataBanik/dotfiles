@@ -3,6 +3,7 @@ return {
 	dependencies = {
 		"williamboman/mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
+		"WhoIsSethDaniel/mason-tool-installer.nvim",
 		"j-hui/fidget.nvim",
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-buffer",
@@ -31,10 +32,28 @@ return {
 		require("fidget").setup()
 
 		-- Mason
+		local ensure_installed = {
+			"lua_ls",
+			"tsserver",
+			"gopls",
+			"jdtls",
+			"clangd",
+			"html",
+			"cssls",
+			"tailwindcss",
+			"eslint_d",
+			"luacheck",
+			"bashls",
+		}
 		require("mason").setup()
+		require("mason-tool-installer").setup({
+			ensure_installed = ensure_installed,
+			auto_update = true,
+			integrations = {
+				["mason-lspconfig"] = true,
+			},
+		})
 		require("mason-lspconfig").setup({
-			ensure_installed = { "lua_ls", "tsserver", "gopls", "jdtls", "clangd" },
-
 			handlers = {
 				function(server_name)
 					require("lspconfig")[server_name].setup({
@@ -89,6 +108,32 @@ return {
 						capabilities = capabilities,
 					})
 				end,
+				["html"] = function()
+					local lspconfig = require("lspconfig")
+					capabilities.textDocument.completion.completionItem.snippetSupport = true
+					lspconfig.html.setup({
+						capabilities = capabilities,
+					})
+				end,
+				["cssls"] = function()
+					local lspconfig = require("lspconfig")
+					capabilities.textDocument.completion.completionItem.snippetSupport = true
+					lspconfig.cssls.setup({
+						capabilities = capabilities,
+					})
+				end,
+				["tailwindcss"] = function()
+					local lspconfig = require("lspconfig")
+					lspconfig.tailwindcss.setup({
+						capabilities = capabilities,
+					})
+				end,
+				["bashls"] = function()
+					local lspconfig = require("lspconfig")
+					lspconfig.bashls.setup({
+						capabilities = capabilities,
+					})
+				end,
 			},
 		})
 
@@ -117,6 +162,9 @@ return {
 
 		-- Vim diagnostic configuration
 		vim.diagnostic.config({
+			underline = true,
+			virtual_text = false,
+			signs = true,
 			float = {
 				focusable = false,
 				style = "minimal",
@@ -125,6 +173,36 @@ return {
 				header = "",
 				prefix = "",
 			},
+			update_in_insert = false,
+		})
+
+		-- For diagnostic, definitions, declarations
+		vim.api.nvim_create_autocmd("LspAttach", {
+			callback = function()
+				-- Telescope keybindings
+				local builtin = require("telescope.builtin")
+				vim.opt_local.omnifunc = "v:lua.vim.lsp.omnifunc"
+				vim.keymap.set("n", "gd", builtin.lsp_definitions, { buffer = 0, desc = "Find definition" })
+				vim.keymap.set("n", "gr", builtin.lsp_references, { buffer = 0, desc = "Find references" })
+				-- Vim LSP remaps
+				vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { buffer = 0, desc = "Goto declaration" })
+				vim.keymap.set("n", "gT", vim.lsp.buf.type_definition, { buffer = 0, desc = "Goto type definition" })
+				vim.keymap.set("n", "<C-]>", function()
+					vim.diagnostic.open_float({ focusable = true })
+				end, { desc = "Show diagnostic in a floating window" })
+				vim.keymap.set(
+					"n",
+					"K",
+					vim.lsp.buf.hover,
+					{ buffer = 0, desc = "Displays information about the symbol" }
+				)
+				vim.keymap.set(
+					"n",
+					"<Space>cr",
+					vim.lsp.buf.rename,
+					{ buffer = 0, desc = "Rename all references to the symbol under the cursor" }
+				)
+			end,
 		})
 
 		-- Autoformatting

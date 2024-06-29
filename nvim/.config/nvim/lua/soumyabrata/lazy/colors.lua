@@ -1,11 +1,3 @@
-function ColorMyPencils(color)
-	color = color or "gruvbox"
-	vim.cmd.colorscheme(color)
-	vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "#51B3EC", bold = true })
-	vim.api.nvim_set_hl(0, "LineNr", { fg = "white", bold = true })
-	vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "#FB508F", bold = true })
-end
-
 -- Night-owl Theme
 
 return {
@@ -14,8 +6,8 @@ return {
 	priority = 1000,
 	config = function()
 		require("night-owl").setup({
-			bold = true,
-			italics = true,
+			bold = false,
+			italics = false,
 			underline = true,
 			undercurl = true,
 			transparent_background = true,

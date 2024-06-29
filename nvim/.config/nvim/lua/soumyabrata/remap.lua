@@ -17,6 +17,3 @@ vim.keymap.set("v", "<leader>y", '"+y', { desc = "Copy to clipboard" })
 vim.keymap.set("n", "<C-c>", "<Esc>", { desc = "Escape from current mode" })
 vim.keymap.set("v", "<C-c>", "<Esc>", { desc = "Escape from current mode" })
 vim.keymap.set("i", "<C-c>", "<Esc>", { desc = "Escape from current mode" })
-
--- Telescope keymaps
-vim.keymap.set("n", "<C-k>", "<Cmd>Telescope keymaps<CR>", { desc = "Open telescope to show keymaps" })
