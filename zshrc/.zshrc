@@ -11,16 +11,17 @@ ZSH=/usr/share/oh-my-zsh/
 
 # Path to powerlevel10k theme
 #source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
-#theme="powerlevel10k/powerlevel10k" 
-#ZSH_THEME="robbyrussell"
+ZSH_THEME="awesomepanda"
 #eval "$(starship init zsh)"
-source ~/powerlevel10k/powerlevel10k.zsh-theme
+#source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # List of plugins used
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions zsh-completions)
 
 # nvim alias:
 alias n="nvim"
+alias vim="nvim"
+alias vi="nvim"
 
 # Kickstart nvim alias
 alias kn='NVIM_APPNAME=KickstartNvim nvim'
@@ -67,6 +68,9 @@ alias tls="tmuxifier ls"
 
 # editor
 export EDITOR=nvim
+
+#Brave alias
+alias brave="brave --password-store=basic"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -154,4 +158,4 @@ alias mkdir='mkdir -p'
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-fastfetch
+neofetch
