@@ -3,13 +3,15 @@
     "layer": "bottom",
     "position": "bottom",
     "mode": "dock",
-    "height": 31,
+    "height": 10,
     "space": 10,
     "exclusive": true,
     "passthrough": false,
     "margin-left": 4,
     "margin-right": 4,
     "modules-left": [
+        "custom/power",
+        "clock",
         "disk",
         "hyprland/window"
     ],
@@ -19,8 +21,6 @@
     "modules-right": [
         "group/hardware",
         "group/system",
-        "clock",
-        "custom/power"
     ],
     "group/hardware": {
         "orientation": "horizontal",
@@ -30,6 +30,9 @@
             "memory",
             "battery"
         ]
+    },
+    "hyprland/window": {
+        "max-length": 30
     },
     "disk": {
         "format": "{percentage_used}% used",
@@ -55,14 +58,16 @@
             ""
         ],
         "interval": 10,
-        "format": "{icon}   {usage}%"
+        "format": "{icon} {usage}%"
     },
     "memory": {
         "format-icons": [
             ""
         ],
         "interval": 10,
-        "format": "{icon}   {percentage}%"
+        "format": "{icon} {percentage}%",
+        "tooltip": true,
+        "tooltip-format": "Total: {total:0.2f}GiB \nUsed: {used:0.2f}GiB \nAvailable: {avail:0.2f}GiB"
     },
     "group/system": {
         "orientation": "horizontal",
@@ -80,12 +85,12 @@
         "format-connected": "󰂯",
         "on-click": "blueman-manager",
         "tooltip": true,
-        "tooltip-format": "{device_alias}   {device_battery_percentage}%",
+        "tooltip-format": "{device_alias} {device_battery_percentage}%",
         "tooltip-format-disabled": "Not connected",
         "tooltip-format-off": "Bluetooth turned off"
     },
     "pulseaudio": {
-        "format": "󰕾    {volume}%",
+        "format": "󰕾 {volume}%",
         "format-muted": "",
         "tooltip": true,
         "tooltip-format-muted": "muted",
@@ -98,7 +103,7 @@
         "tooltip-format-wifi": "{essid} ({signalStrength}%)"
     },
     "backlight": {
-        "format": "   {percent}%"
+        "format": " {percent}%"
     },
     "battery": {
         "bat": "BAT0",
@@ -109,7 +114,7 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{icon}   {capacity}%",
+        "format": "{icon} {capacity}%",
         "rotate": 0,
         "format-charging": "  {capacity}%",
         "format-plugged": "  {capacity}%",
