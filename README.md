@@ -1,8 +1,11 @@
 # Dotfiles
 
 This repository consists of my dotfiles for the following linux tools:
+- Hyprland
+- Waybar
+- Wlogout
+- Rofi
 - Alacritty
-- Dunst
 - Kitty
 - i3-wm
 - Fastfetch
@@ -18,7 +21,7 @@ This repository consists of my dotfiles for the following linux tools:
 If you want to use these config files, make sure you have the following tools installed. If you are using Arch Linux, then just enter the below command in your favorite terminal
 
 ```
-sudo pacman -S stow alacritty dunst kitty i3 fastfetch neovim picom polybar tmux git zsh-syntax-highlighting zsh-autosuggestions zsh-completions
+sudo pacman -S git stow hyprland rofi waybar wlogout alacritty kitty i3 fastfetch neovim picom polybar tmux zsh-syntax-highlighting zsh-autosuggestions zsh-completions
 ```
 
 Install ZSH from their site [https://ohmyz.sh](https://ohmyz.sh/#install)
@@ -40,16 +43,7 @@ cd ~/dotfiles
 And then run the executable file.
 
 ```
-./stow.sh
+stow .
 ```
 
-In case the executable file does not run, try these command:
-
-```
-chmod +x stow.sh
-stow.sh
-```
-
-`chmod +x` makes a shell script executable. So, it is safe to run the command.
-
-Now, you should have the necessary config files in the `~/.config/` directory.
+Now, you should have all the config files symlinked in the `~/.config/` directory.
