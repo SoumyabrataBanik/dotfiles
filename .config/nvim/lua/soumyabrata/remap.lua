@@ -4,9 +4,9 @@ vim.keymap.set("n", "<leader><leader>", vim.cmd.Ex, { desc = "Toggle builtin tre
 vim.keymap.set("n", "<leader>so", vim.cmd.so, { desc = "source neovim" })
 vim.keymap.set("n", "<C-s>", vim.cmd.w, { desc = "Save file under current buffer" })
 --vim.keymap.set("n", "<leader>q", vim.cmd.q)
-vim.keymap.set("n", "<C-q>", vim.cmd.q, { desc = "Quit vim" })
-vim.keymap.set("n", "<C-Q>", vim.cmd.q, { desc = "Quit vim" })
-vim.keymap.set("n", "<leader>wq", vim.cmd.wq, { desc = "Save file under current buffer and quit vim" })
+vim.keymap.set({ "n", "v" }, "<leader>ww", vim.cmd.q, { desc = "Quit vim" })
+vim.keymap.set({ "n", "v" }, "<leader>wq", vim.cmd.wq, { desc = "Save file under current buffer and quit vim" })
+vim.keymap.set({ "n", "v" }, "<leader>wf", "<CMD>q!<CR>", { desc = "Force quit neovim" })
 
 -- Pasting a file from clipboard
 vim.keymap.set("n", "<leader>p", '"+p', { desc = "Paste from clipboard" })

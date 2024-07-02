@@ -17,7 +17,7 @@ return {
 			},
 		})
 
-		vim.keymap.set("n", "<leader>e", "<CMD>Oil<CR>", { desc = "Open Oil" })
+		vim.keymap.set("n", "<leader>o", "<CMD>Oil<CR>", { desc = "Open Oil" })
 		vim.keymap.set("n", "<leader>s", oil.save, { desc = "Save changes in oil" })
 	end,
 }

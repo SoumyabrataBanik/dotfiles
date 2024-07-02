@@ -35,9 +35,11 @@ return {
 
 		local builtin = require("telescope.builtin")
 
-		vim.keymap.set("n", "<Space>ff", builtin.find_files, { desc = "Find Files" })
+		vim.keymap.set("n", "<Space>ff", function()
+			builtin.find_files({ hidden = true })
+		end, { desc = "Find Files" })
 		vim.keymap.set("n", "<Space>gf", builtin.git_files, { desc = "Get git files" })
-		vim.keymap.set("n", "<Space>fn", builtin.help_tags, { desc = "Open help tags" })
+		vim.keymap.set("n", "<Space>hh", builtin.help_tags, { desc = "Open help tags" })
 		vim.keymap.set("n", "<Space>fg", builtin.live_grep, { desc = "Grep words from Files" })
 		vim.keymap.set("n", "<Space>/", builtin.current_buffer_fuzzy_find, { desc = "Fuzzy find in current buffer" })
 
@@ -48,7 +50,7 @@ return {
 			builtin.find_files({ cwd = vim.fs.joinpath(vim.fn.stdpath("data"), "lazy") })
 		end)
 
-		vim.keymap.set("n", "<space>en", function()
+		vim.keymap.set("n", "<space>fn", function()
 			builtin.find_files({ cwd = vim.fn.stdpath("config") })
 		end)
 

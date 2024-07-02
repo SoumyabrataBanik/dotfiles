@@ -44,6 +44,7 @@ return {
 			"eslint_d",
 			"luacheck",
 			"bashls",
+			"jq",
 		}
 		require("mason").setup()
 		require("mason-tool-installer").setup({
