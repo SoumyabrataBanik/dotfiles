@@ -1,18 +1,19 @@
 import = [
-    "~/.config/alacritty/catpuccin-mocha.toml"
+    "~/dotfiles/.config/alacritty/tokyonight.toml"
 ]
 
 [shell]
 program = "/bin/zsh"
 
 [window]
-#padding = { x = 20, y = 20 }
+padding = { x = 10, y = 10 }
 decorations = "None"
 opacity = 0.8
 blur = true
 
 [font]
-size = 8.0
-normal = { family = "ComicShannsMono Nerd Font Propo", style = "Regular" }
-bold = { family = "ComicShannsMono Nerd Font Propo", style = "Bold" }
-italic = { family = "VictorMono Nerd Font Mono", style = "Medium Oblique" }
+size = 12
+normal = { family = "BerkeleyMono Nerd Font Mono", style = "Regular"}
+bold = { family = "BerkeleyMono Nerd Font Mono", style = "Bold"}
+italic = { family = "BerkeleyMono Nerd Font Mono", style = "Italic"}
+bold_italic = { family = "BerkeleyMono Nerd Font Mono", style = "Bold Italic"}

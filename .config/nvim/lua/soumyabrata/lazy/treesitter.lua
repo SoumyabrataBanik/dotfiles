@@ -23,7 +23,7 @@ return {
 				"html",
 				"xml",
 				"http",
-				"graphql",
+				"sql",
 			},
 			sync_install = false,
 			highlight = { enable = true },

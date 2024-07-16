@@ -100,7 +100,8 @@
         "format": "",
         "format-disconnected": "󰖪",
         "tooltip": true,
-        "tooltip-format-wifi": "{essid} ({signalStrength}%)"
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+        "on-click": "nm-applet --indicator"
     },
     "backlight": {
         "format": " {percent}%"

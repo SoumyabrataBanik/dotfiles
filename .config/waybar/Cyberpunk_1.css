@@ -1,0 +1,23 @@
+@define-color foreground #e0e0e0;
+@define-color background #0a0a0f;
+@define-color cursor #ff00ff;
+
+/* Normal colors */
+@define-color color0 #1a1a2e; /* Black */
+@define-color color1 #ff0055; /* Red */
+@define-color color2 #00ff99; /* Green */
+@define-color color3 #ffaa00; /* Yellow */
+@define-color color4 #00aaff; /* Blue */
+@define-color color5 #aa00ff; /* Magenta */
+@define-color color6 #00ffff; /* Cyan */
+@define-color color7 #d0d0d0; /* White */
+
+/* Bright colors */
+@define-color color8 #4a4a6a; /* Bright Black */
+@define-color color9 #ff5599; /* Bright Red */
+@define-color color10 #88ffbb; /* Bright Green */
+@define-color color11 #ffcc66; /* Bright Yellow */
+@define-color color12 #66ccff; /* Bright Blue */
+@define-color color13 #cc66ff; /* Bright Magenta */
+@define-color color14 #99ffff; /* Bright Cyan */
+@define-color color15 #ffffff; /* Bright White */

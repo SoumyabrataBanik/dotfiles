@@ -45,6 +45,10 @@ return {
 			"luacheck",
 			"bashls",
 			"jq",
+			"pylsp",
+			"black",
+			"yamlls",
+			"yamlfmt",
 		}
 		require("mason").setup()
 		require("mason-tool-installer").setup({
@@ -135,6 +139,22 @@ return {
 						capabilities = capabilities,
 					})
 				end,
+				["pylsp"] = function()
+					local lspconfig = require("lspconfig")
+					lspconfig.pylsp.setup({
+						capabilities = capabilities,
+						settings = {
+							pylsp = {
+								plugins = {
+									pycodestyle = {
+										maxLineLength = 200,
+										indentSize = 4,
+									},
+								},
+							},
+						},
+					})
+				end,
 			},
 		})
 
@@ -193,12 +213,6 @@ return {
 				end, { desc = "Show diagnostic in a floating window" })
 				vim.keymap.set(
 					"n",
-					"K",
-					vim.lsp.buf.hover,
-					{ buffer = 0, desc = "Displays information about the symbol" }
-				)
-				vim.keymap.set(
-					"n",
 					"<Space>cr",
 					vim.lsp.buf.rename,
 					{ buffer = 0, desc = "Rename all references to the symbol under the cursor" }
@@ -211,8 +225,6 @@ return {
 		require("conform").setup({
 			formatters_by_ft = {
 				lua = { "stylua" },
-				-- Conform will run multiple formatters sequentially
-				-- Use a sub-list to run only the first available formatter
 				javascript = { { "prettierd", "prettier" } },
 				typescript = { { "prettierd", "prettier" } },
 				javascriptreact = { { "prettierd", "prettier" } },
@@ -222,6 +234,9 @@ return {
 				json = { { "prettierd", "prettier" } },
 				cpp = { "clang-format" },
 				go = { "goimports", "gofmt" },
+				python = { "black" },
+				yaml = { "yamlfmt" },
+				sql = { "sql-formatter" },
 			},
 		})
 

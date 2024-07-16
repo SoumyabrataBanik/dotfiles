@@ -11,10 +11,10 @@ window {
 button {
   border-radius: 50px;
   border-color: black;
-  text-decoration-color: #ffffff;
+  text-decoration-color: #3700b3;
   color: #ffffff;
   background-color: transparent;
-  border: 1px solid transparent;
+  border: 3px solid transparent;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 25%;
@@ -22,14 +22,12 @@ button {
 }
 
 button:active {
-  background-color: #3700b3;
-  outline-style: none;
+  border: 3px solid #3700b3;
 }
 
 button:hover,
 button:focus {
-  background-color: #594ce0;
-  outline-style: none;
+  border: 3px solid #594ce0;
 }
 
 #lock {

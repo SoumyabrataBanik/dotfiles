@@ -20,8 +20,6 @@ grim /tmp/screenlock/current.png
 
 convert -scale 10% -blur 0x4 -resize 1000% /tmp/screenlock/current.png /tmp/screenlock/blur.png
 
-composite -gravity southeast ~/dotfiles/wallpapers/overlay1.png /tmp/screenlock/blur.png /tmp/screenlock/prelock.png
-
-composite -gravity southwest ~/dotfiles/wallpapers/overlay2.png /tmp/screenlock/prelock.png /tmp/screenlock/lock.png
+composite -gravity center ~/dotfiles/wallpapers/overlay.png /tmp/screenlock/blur.png /tmp/screenlock/lock.png
 
 hyprlock
