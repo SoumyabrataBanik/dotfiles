@@ -1,0 +1,38 @@
+# Zathura configuration file
+# Cyberpunk-inspired color scheme based on the provided image
+
+# Base colors
+set default-bg              "#0a0a0f"
+set default-fg              "#d4d4d8"
+
+# Status bar colors
+set statusbar-bg            "#1e1e2e"
+set statusbar-fg            "#d4d4d8"
+
+# Input bar colors
+set inputbar-bg             "#1e1e2e"
+set inputbar-fg             "#d4d4d8"
+
+# Page background (dark, as requested)
+set recolor-darkcolor       "#d4d4d8"
+set recolor-lightcolor      "#0a0a0f"
+
+# Highlighted text color
+set highlight-color         "#ff00ff"
+set highlight-active-color  "#00ffff"
+
+# Links
+set link-color              "#ff00ff"
+
+# Search
+set search-color            "#ffff00"
+
+# Enable recoloring
+set recolor                 true
+
+# Preserve original hue when recoloring
+set recolor-keephue         true
+
+# Adjust contrast (0-1, higher means more contrast)
+set recolor-reverse-video   false
+set recolor-contrast        0.2

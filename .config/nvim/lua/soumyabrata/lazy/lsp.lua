@@ -83,6 +83,15 @@ return {
 					local lspconfig = require("lspconfig")
 					lspconfig.tsserver.setup({
 						capabilities = capabilities,
+						settings = {
+							typescript = {
+								format = {
+									indentSize = 4,
+									indentStyle = "smart",
+									tabSize = 4,
+								},
+							},
+						},
 					})
 				end,
 				["gopls"] = function()

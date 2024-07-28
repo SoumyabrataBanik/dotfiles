@@ -6,7 +6,7 @@ local action = wezterm.action
 config.default_prog = { "zsh" }
 
 -- Window
-config.window_background_opacity = 0.7
+config.window_background_opacity = 1
 
 -- Tab Bar
 config.enable_tab_bar = false

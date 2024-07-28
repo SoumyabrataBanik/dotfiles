@@ -26,8 +26,11 @@ alias n="nvim"
 alias vim="nvim"
 alias vi="nvim"
 
-# Kickstart nvim alias
-alias kn='NVIM_APPNAME=KickstartNvim nvim'
+#tree alias
+alias "treeal"="tree -a -L 2"
+
+#python aliases
+alias python="python3"
 
 #pacman alias:
 alias p="pacman"
