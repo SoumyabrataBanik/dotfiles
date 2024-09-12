@@ -18,7 +18,7 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id ~/dotfiles/i3/.config/i3/scripts/screen_saver.sh
 
 exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
-exec --no-startup-id feh --bg-scale ~/dotfiles/wallpapers/Peaceful\ Wallpaer.jpg
+exec --no-startup-id feh --bg-scale ~/dotfiles/wallpapers/Avengers_Endgame.jpg
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -47,8 +47,10 @@ exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +1% && $refresh_i3status
+bindsym Shift+XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -1% && $refresh_i3status
+bindsym Shift+XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
@@ -62,7 +64,7 @@ floating_modifier $mod
 #tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec wezterm
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -75,8 +77,8 @@ bindsym $mod+d exec --no-startup-id rofi -show drun
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
-# open firefox
-bindsym $mod+f exec firefox -P 
+# open zen-browser
+bindsym $mod+z exec zen-browser
 
 # open dolphin
 bindsym $mod+m exec dolphin
@@ -132,19 +134,19 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # open applications in particular workspace with these keybindings
-bindsym $secMod+1 workspace 1; exec alacritty
-bindsym $secMod+2 workspace 2; exec firefox -P
+bindsym $secMod+1 workspace 1; exec wezterm
+bindsym $secMod+2 workspace 2; exec zen-browser
 bindsym $secMod+Shift+2 workspace 2; exec torbrowser-launcher
 bindsym $secMod+3 workspace 3; exec cd Postman && ./Postman
 bindsym $secMod+4 workspace 4; exec spotify
 
 # open particular applications
-bindsym $secMod+t workspace 1; exec alacritty -e tmux
-bindsym $secMod+g workspace 2; exec firefox github.com/SoumyabrataBanik
-bindsym $secMod+y workspace 2; exec firefox youtube.com
-bindsym $secMod+r workspace 2; exec firefox reddit.com
-bindsym $secMod+shift+g workspace 2; exec firefox gmail.com
-bindsym $secMod+m workspace 2; exec firefox moodlebppimt.ddns.net/login/index.php
+bindsym $secMod+t workspace 1; exec wezterm -e tmux
+bindsym $secMod+g workspace 2; exec zen-browser github.com/SoumyabrataBanik
+bindsym $secMod+y workspace 2; exec zen-browser youtube.com
+bindsym $secMod+r workspace 2; exec zen-browser reddit.com
+bindsym $secMod+shift+g workspace 2; exec zen-browser gmail.com
+bindsym $secMod+m workspace 2; exec zen-browser moodlebppimt.ddns.net/login/index.php
 
 # focus the child container
 #bindsym $mod+d focus child

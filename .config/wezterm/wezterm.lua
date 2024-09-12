@@ -9,16 +9,16 @@ config.default_prog = { "zsh" }
 config.window_background_opacity = 1
 
 -- Tab Bar
-config.enable_tab_bar = false
+config.enable_tab_bar = true
 
 -- Font
 config.font = wezterm.font("BerkeleyMono NerdFont Mono")
 config.freetype_load_target = "HorizontalLcd"
-config.font_size = 13
+config.font_size = 11.8
 
 -- Color Schemes
-config.color_scheme = "Cyberpunk_theme_1"
 config.color_scheme_dirs = { "~/dotfiles/.config/wezterm/themes" }
+config.color_scheme = "Argonaut (Gogh)"
 
 -- Keymaps
 config.keys = {

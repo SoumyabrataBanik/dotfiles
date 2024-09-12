@@ -16,7 +16,9 @@ ZSH=/usr/share/oh-my-zsh/
 #ZSH_THEME="awesomepanda"
 
 # Powerlevel10k
-source ~/powerlevel10k/powerlevel10k.zsh-theme
+#source ~/powerlevel10k/powerlevel10k.zsh-theme
+
+eval "$(starship init zsh)"
 
 # List of plugins used
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions zsh-completions)
@@ -30,7 +32,7 @@ alias vi="nvim"
 alias "treeal"="tree -a -L 2"
 
 #python aliases
-alias python="python3"
+alias py="python3"
 
 #pacman alias:
 alias p="pacman"

@@ -10,6 +10,7 @@ return {
 		"hrsh7th/cmp-path",
 		"hrsh7th/cmp-cmdline",
 		"hrsh7th/nvim-cmp",
+		"hrsh7th/vscode-langservers-extracted",
 		"L3MON4D3/LuaSnip",
 		"saadparwaiz1/cmp_luasnip",
 		"mfussenegger/nvim-jdtls",
@@ -49,6 +50,10 @@ return {
 			"black",
 			"yamlls",
 			"yamlfmt",
+			"intelephense",
+			"pint",
+			"phpcs",
+			"psalm",
 		}
 		require("mason").setup()
 		require("mason-tool-installer").setup({
@@ -79,6 +84,7 @@ return {
 						},
 					})
 				end,
+
 				["tsserver"] = function()
 					local lspconfig = require("lspconfig")
 					lspconfig.tsserver.setup({
@@ -94,34 +100,18 @@ return {
 						},
 					})
 				end,
-				["gopls"] = function()
-					local lspconfig = require("lspconfig")
-					lspconfig.gopls.setup({
-						capabilities = capabilities,
-						settings = {
-							gopls = {
-								completeFunctionCalls = true,
-								analyses = {
-									unreachable = true,
-								},
-								hints = {
-									assignVariableTypes = true,
-									compositeLiteralFields = true,
-									compositeLiteralTypes = true,
-									functionTypeParameters = true,
-									parameterNames = true,
-									rangeVariableTypes = true,
-								},
-							},
-						},
-					})
-				end,
+
 				["clangd"] = function()
 					local lspconfig = require("lspconfig")
 					lspconfig.clangd.setup({
 						capabilities = capabilities,
+						cmd = {
+							"clangd",
+							"--fallback-style=webkit",
+						},
 					})
 				end,
+
 				["html"] = function()
 					local lspconfig = require("lspconfig")
 					capabilities.textDocument.completion.completionItem.snippetSupport = true
@@ -129,6 +119,7 @@ return {
 						capabilities = capabilities,
 					})
 				end,
+
 				["cssls"] = function()
 					local lspconfig = require("lspconfig")
 					capabilities.textDocument.completion.completionItem.snippetSupport = true
@@ -136,18 +127,21 @@ return {
 						capabilities = capabilities,
 					})
 				end,
+
 				["tailwindcss"] = function()
 					local lspconfig = require("lspconfig")
 					lspconfig.tailwindcss.setup({
 						capabilities = capabilities,
 					})
 				end,
+
 				["bashls"] = function()
 					local lspconfig = require("lspconfig")
 					lspconfig.bashls.setup({
 						capabilities = capabilities,
 					})
 				end,
+
 				["pylsp"] = function()
 					local lspconfig = require("lspconfig")
 					lspconfig.pylsp.setup({
@@ -162,6 +156,13 @@ return {
 								},
 							},
 						},
+					})
+				end,
+
+				["intelephense"] = function()
+					local lspconfig = require("lspconfig")
+					lspconfig.intelephense.setup({
+						capabilities = capabilities,
 					})
 				end,
 			},
@@ -238,14 +239,12 @@ return {
 				typescript = { { "prettierd", "prettier" } },
 				javascriptreact = { { "prettierd", "prettier" } },
 				typescriptreact = { { "prettierd", "prettier" } },
-				css = { { "prettierd", "prettier" } },
-				html = { { "prettierd", "prettier" } },
 				json = { { "prettierd", "prettier" } },
 				cpp = { "clang-format" },
-				go = { "goimports", "gofmt" },
 				python = { "black" },
 				yaml = { "yamlfmt" },
 				sql = { "sql-formatter" },
+				php = { "phpcs", "pint", "psalm" },
 			},
 		})
 
