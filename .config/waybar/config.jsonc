@@ -1,44 +1,58 @@
 // -*- mode: jsonc -*-
 {
     "layer": "bottom",
-    "position": "bottom",
+    "position": "top",
     "mode": "dock",
-    "height": 10,
-    "space": 10,
+    "height": 0,
     "exclusive": true,
-    "passthrough": false,
-    "margin-left": 4,
-    "margin-right": 4,
+    "gtk-layer-shell": true,
+
     "modules-left": [
-        "custom/power",
-        "clock",
         "disk",
-        "hyprland/window"
-    ],
-    "modules-center": [
         "hyprland/workspaces"
     ],
-    "modules-right": [
-        "group/hardware",
-        "group/system",
+    "modules-center": [
+        "clock",
     ],
-    "group/hardware": {
-        "orientation": "horizontal",
-        "modules": [
-            "temperature",
-            "cpu",
-            "memory",
-            "battery"
-        ]
+    "modules-right": [
+        "cpu",
+        "memory",
+        "bluetooth",
+        "pulseaudio",
+        "network",
+        "backlight",
+        "battery",
+    ],
+
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "format-icons": {
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "",
+            "urgent": "",
+            "active": "",
+            "default": ""
+        },
+        "persistent-workspaces": {
+            "1": [], 
+            "2": [], 
+            "3": [], 
+            "4": [], 
+            "5": [],
+        }
     },
     "hyprland/window": {
         "max-length": 30
     },
     "disk": {
-        "format": "{percentage_used}% used",
+        "format": "󰣇",
         "path": "/",
         "tooltip": true,
-        "tooltip-format": "Total: {specific_total:0.2f} GB.\nUsed: {specific_used:0.2f} GB \nFree: {specific_free:0.2f} GB",
+        "tooltip-format": "Total: {specific_total:0.2f} GB.\nUsed: {specific_used:0.2f} GB ({percentage_used}%) \nFree: {specific_free:0.2f} GB ({percentage_free}%)",
         "unit": "GB"
     },
     "temperature": {
@@ -55,28 +69,19 @@
     },
     "cpu": {
         "format-icons": [
-            ""
+            " "
         ],
         "interval": 10,
         "format": "{icon} {usage}%"
     },
     "memory": {
         "format-icons": [
-            ""
+            " "
         ],
         "interval": 10,
         "format": "{icon} {percentage}%",
         "tooltip": true,
         "tooltip-format": "Total: {total:0.2f}GiB \nUsed: {used:0.2f}GiB \nAvailable: {avail:0.2f}GiB"
-    },
-    "group/system": {
-        "orientation": "horizontal",
-        "modules": [
-            "bluetooth",
-            "pulseaudio",
-            "network",
-            "backlight"
-        ]
     },
     "bluetooth": {
         "format": "󰂯",
@@ -91,7 +96,7 @@
     },
     "pulseaudio": {
         "format": "󰕾 {volume}%",
-        "format-muted": "",
+        "format-muted": " ",
         "tooltip": true,
         "tooltip-format-muted": "muted",
         "on-click": "pavucontrol"
@@ -104,7 +109,7 @@
         "on-click": "nm-applet --indicator"
     },
     "backlight": {
-        "format": " {percent}%"
+        "format": "  {percent}%"
     },
     "battery": {
         "bat": "BAT0",
@@ -115,9 +120,9 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{icon} {capacity}%",
+        "format": "{icon}  {capacity}%",
         "rotate": 0,
-        "format-charging": "  {capacity}%",
+        "format-charging": "󰂄  {capacity}%",
         "format-plugged": "  {capacity}%",
         "format-icons": [
             "",
@@ -129,8 +134,8 @@
     },
     "clock": {
         "interval": 1,
-        "format": "{:%H:%M:%S}",
-        "format-alt": "{:%A, %B %d, %Y}",
+        "format": "  {:%H:%M}",
+        "format-alt": "  {:%A, %B %d, %Y}",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "calendar": {
             "mode": "year",
@@ -153,10 +158,9 @@
             "on-scroll-down": "shift_down"
         }
     },
-    "custom/power": {
-        "format": "󰐥",
+    "custom/arch": {
+        "format": "󰣇",
         "tooltip": true,
-        "tooltip-format": "Power Button",
-        "on-click": "wlogout",
+        "tooltip-format": "I Use Arch BTW",
     }
 }

@@ -1,84 +1,83 @@
-@import url("./avengers_endgame.css");
+@import url("./dark-theme.css");
+
 * {
-  border: 0;
-  border-radius: 0;
-  font-size: 13px;
-  padding: 1px;
-  margin: 0;
+    border: 0;
+    border-radius: 0;
+    font-size: 14px;
+    padding: 1px;
+    margin: 0;
+    font-family: VictorMono Nerd Font;
 }
 
 window#waybar {
-  background: transparent;
+    background-color: transparent;
 }
 
 window#waybar.hidden {
-  opacity: 0;
+    opacity: 0;
 }
 
 window#waybar.fullscreen {
-  opacity: 0;
+    opacity: 0;
 }
 
-#waybar.empty #window {
-  background: none;
-  border: none;
-}
-
-#window,
-#clock,
-#custom-power,
+#workspaces,
 #cpu,
 #memory,
-#battery,
 #network,
-#backlight,
-#disk,
 #bluetooth,
 #pulseaudio,
-#temperature {
-  border: 2px solid @cursor;
-  padding: 0 10px;
-  background-color: @background;
-  color: @cursor;
-  margin: 0 5px;
+#backlight,
+#disk,
+#custom-arch,
+#battery {
+    margin: 0 5px;
+}
+
+#cpu,
+#memory,
+#bluetooth,
+#pulseaudio,
+#backlight,
+#clock,
+#custom-arch,
+#battery {
+    background-color: @background;
+    color: @foreground;
+    padding: 0px 10px;
+    border: 2px solid @foreground-dark;
+    border-radius: 5px;
+}
+
+#workspaces,
+#network,
+#disk {
+    background-color: @background;
+    color: @foreground;
+    padding: 0px 18px 0px 12px;
+    border: 2px solid @foreground-dark;
+    border-radius: 5px;
 }
 
 #workspaces button {
-  border: 2px solid @cursor;
-  border-radius: 10px;
-  padding: 0 10px;
-  margin: 0 3px;
+    color: @color2;
+    padding: 0px 5px;
 }
 
 #workspaces button.active {
-  background-color: @color9;
-  border: 2px solid @color9;
-  color: @foreground;
+    color: @foreground;
 }
 
-#temperature {
-  border-bottom-left-radius: 20px;
+#workspaces button.urgent {
+    color: @color1;
 }
 
-#backlight {
-  border-top-right-radius: 20px;
+#disk {
+    color: @color11;
+    font-size: 20px;
 }
 
-#custom-power {
-  border-top-left-radius: 20px;
-}
-
-#window {
-  border-bottom-right-radius: 20px;
-}
-
-#clock,
-#disk,
-#cpu,
-#memory,
-#battery,
-#bluetooth,
-#pulseaudio,
-#network {
-  border-radius: 0px;
+#custom-arch {
+    color: @color11;
+    font-size: 20px;
 }

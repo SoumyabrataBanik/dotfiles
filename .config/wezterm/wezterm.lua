@@ -5,8 +5,11 @@ local action = wezterm.action
 -- Default program
 config.default_prog = { "zsh" }
 
+-- Disable wayland
+config.enable_wayland = false
+
 -- Window
-config.window_background_opacity = 1
+config.window_background_opacity = 0.7
 
 -- Tab Bar
 config.enable_tab_bar = true
@@ -18,7 +21,15 @@ config.font_size = 11.8
 
 -- Color Schemes
 config.color_scheme_dirs = { "~/dotfiles/.config/wezterm/themes" }
-config.color_scheme = "Argonaut (Gogh)"
+config.color_scheme = "Atom"
+
+--window Padding
+config.window_padding = {
+	left = 2,
+	right = 2,
+	top = 0,
+	bottom = 0,
+}
 
 -- Keymaps
 config.keys = {
