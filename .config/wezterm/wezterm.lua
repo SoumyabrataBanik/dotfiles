@@ -15,13 +15,13 @@ config.window_background_opacity = 0.7
 config.enable_tab_bar = true
 
 -- Font
-config.font = wezterm.font("BerkeleyMono NerdFont Mono")
+config.font = wezterm.font("JetBrainsMono Nerd Font")
 config.freetype_load_target = "HorizontalLcd"
 config.font_size = 11.8
 
 -- Color Schemes
 config.color_scheme_dirs = { "~/dotfiles/.config/wezterm/themes" }
-config.color_scheme = "Atom"
+config.color_scheme = "Rose Pine"
 
 --window Padding
 config.window_padding = {

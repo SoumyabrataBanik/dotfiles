@@ -37,6 +37,8 @@ return {
 			"lua_ls",
 			"tsserver",
 			"gopls",
+			"gofumpt",
+			"goimports",
 			"jdtls",
 			"clangd",
 			"html",
@@ -245,6 +247,7 @@ return {
 				yaml = { "yamlfmt" },
 				sql = { "sql-formatter" },
 				php = { "phpcs", "pint", "psalm" },
+				go = { "gofumpt", "goimports" },
 			},
 		})
 

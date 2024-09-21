@@ -3,8 +3,8 @@
     "layer": "top",
     "position": "top",
     "height": 0,
+    "spacing": 5,
     "exclusive": true,
-    "gtk-layer-shell": true,
 
     "modules-left": [
         "disk",
@@ -95,7 +95,7 @@
     },
     "pulseaudio": {
         "format": "󰕾 {volume}%",
-        "format-muted": " ",
+        "format-muted": "<span color='red'></span>",
         "tooltip": true,
         "tooltip-format-muted": "muted",
         "on-click": "pavucontrol"
@@ -108,28 +108,40 @@
         "on-click": "nm-applet --indicator"
     },
     "backlight": {
-        "format": "  {percent}%"
+        "format": "<span color='yellow'></span>  {percent}%"
     },
     "battery": {
         "bat": "BAT0",
         "adapter": "ACO",
-        "interval": 60,
+        "interval": 5,
         "states": {
             "good": 95,
             "warning": 30,
             "critical": 15
         },
-        "format": "{icon}  {capacity}%",
+        "format-charging": "<span color='lightgreen'>{icon}</span> {capacity}%",
+        "format-discharging": "<span color='orange'>{icon}</span>  {capacity}%",
         "rotate": 0,
-        "format-charging": "󰂄  {capacity}%",
-        "format-plugged": "  {capacity}%",
-        "format-icons": [
-            "",
-            "",
-            "",
-            "",
-            ""
-        ]
+        /*"format-charging": "{icon} {capacity}%", */
+        "format": "󱈑 {capacity}%",
+        "format-critical": "<span color='red'>󱃍</span> {capacity}%",
+        "format-icons": {
+            "discharging": [
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "charging": [
+                "󰢟",
+                "󰂆",
+                "󰂈",
+                "󰂉",
+                "󰂊",
+                "󰂅"
+            ],
+        }
     },
     "clock": {
         "interval": 1,

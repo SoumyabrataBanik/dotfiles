@@ -21,23 +21,10 @@ window#waybar.fullscreen {
     opacity: 0;
 }
 
-#workspaces,
 #cpu,
 #memory,
-#network,
-#bluetooth,
 #pulseaudio,
-#backlight,
-#disk,
-#custom-arch,
-#battery {
-    margin: 0 5px;
-}
-
-#cpu,
-#memory,
 #bluetooth,
-#pulseaudio,
 #backlight,
 #clock,
 #custom-arch,
@@ -49,6 +36,7 @@ window#waybar.fullscreen {
     border-radius: 5px;
 }
 
+#pulseaudio.muted,
 #workspaces,
 #network,
 #disk {
@@ -73,11 +61,6 @@ window#waybar.fullscreen {
 }
 
 #disk {
-    color: @color11;
-    font-size: 20px;
-}
-
-#custom-arch {
     color: @color11;
     font-size: 20px;
 }
