@@ -16,9 +16,8 @@
     "modules-right": [
         "cpu",
         "memory",
-        "bluetooth",
         "pulseaudio",
-        "network",
+        "tray",
         "backlight",
         "battery",
     ],
@@ -46,6 +45,9 @@
     },
     "hyprland/window": {
         "max-length": 30
+    },
+    "tray": {
+        "spacing": 8,
     },
     "disk": {
         "format": "󰣇",
@@ -87,7 +89,6 @@
         "format-disabled": "󰂲",
         "format-off": "󰂲",
         "format-connected": "󰂯",
-        "on-click": "blueman-manager",
         "tooltip": true,
         "tooltip-format": "{device_alias} {device_battery_percentage}%",
         "tooltip-format-disabled": "Not connected",

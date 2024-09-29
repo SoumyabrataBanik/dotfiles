@@ -28,6 +28,7 @@ window#waybar.fullscreen {
 #backlight,
 #clock,
 #custom-arch,
+#tray,
 #battery {
     background-color: @background;
     color: @foreground;
@@ -63,4 +64,9 @@ window#waybar.fullscreen {
 #disk {
     color: @color11;
     font-size: 20px;
+}
+
+#tray menu {
+    border: 1px solid @foreground;
+    border-radius: 4px;
 }
