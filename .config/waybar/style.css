@@ -6,11 +6,12 @@
     font-size: 14px;
     padding: 1px;
     margin: 0;
-    font-family: VictorMono Nerd Font;
+    font-family: JetBrainsMono Nerd Font;
 }
 
 window#waybar {
-    background-color: transparent;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: @background;
 }
 
 window#waybar.hidden {
@@ -21,36 +22,27 @@ window#waybar.fullscreen {
     opacity: 0;
 }
 
+#custom-arch,
+#tray,
 #cpu,
 #memory,
 #pulseaudio,
-#bluetooth,
-#backlight,
 #clock,
-#custom-arch,
-#tray,
 #battery {
-    background-color: @background;
-    color: @foreground;
-    padding: 0px 10px;
-    border: 2px solid @foreground-dark;
-    border-radius: 5px;
+    padding: 0;
 }
 
-#pulseaudio.muted,
-#workspaces,
-#network,
 #disk {
-    background-color: @background;
-    color: @foreground;
-    padding: 0px 18px 0px 12px;
-    border: 2px solid @foreground-dark;
-    border-radius: 5px;
+    padding: 0px 11px 0px 5px;
+}
+
+#clock {
+    font-weight: bolder;
 }
 
 #workspaces button {
-    color: @color2;
-    padding: 0px 5px;
+    color: black;
+    margin: 0px 2px 0px 2px;
 }
 
 #workspaces button.active {
@@ -61,12 +53,15 @@ window#waybar.fullscreen {
     color: @color1;
 }
 
-#disk {
-    color: @color11;
-    font-size: 20px;
-}
-
 #tray menu {
     border: 1px solid @foreground;
-    border-radius: 4px;
+    border-radius: 6px;
+}
+
+#tray>.active {
+    color: black;
+}
+
+#tray>.passive {
+    color: grey;
 }

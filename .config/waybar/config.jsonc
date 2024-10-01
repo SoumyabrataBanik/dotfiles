@@ -1,29 +1,36 @@
-// -*- mode: jsonc -*-
 {
-    "layer": "top",
-    "position": "top",
-    "height": 0,
-    "spacing": 5,
-    "exclusive": true,
-
+	"layer": "top",
+	"position": "top",
+    "height": 32,
+    "spacing": 25,
     "modules-left": [
+        "custom/arch",
         "disk",
-        "hyprland/workspaces"
-    ],
-    "modules-center": [
-        "clock",
+        "hyprland/workspaces",
     ],
     "modules-right": [
         "cpu",
         "memory",
         "pulseaudio",
         "tray",
-        "backlight",
         "battery",
+        "clock",
     ],
-
+    
+    "custom/arch": {
+        "format": "<span font-size='x-large'>󰣇</span>",
+        "tooltip": true,
+        "tooltip-format": "I use Arch BTW!"
+    },
+    "disk": {
+        "format": "",
+        "path": "/",
+        "tooltip": true,
+        "tooltip-format": "Total: {specific_total:0.2f} GB.\nUsed: {specific_used:0.2f} GB ({percentage_used}%) \nFree: {specific_free:0.2f} GB ({percentage_free}%)",
+        "unit": "GB"
+    },
     "hyprland/workspaces": {
-        "format": "{icon}",
+        "format": "<span color='black'>{icon}</span>",
         "on-click": "activate",
         "format-icons": {
             "1": "",
@@ -43,73 +50,32 @@
             "5": [],
         }
     },
-    "hyprland/window": {
-        "max-length": 30
-    },
-    "tray": {
-        "spacing": 8,
-    },
-    "disk": {
-        "format": "󰣇",
-        "path": "/",
-        "tooltip": true,
-        "tooltip-format": "Total: {specific_total:0.2f} GB.\nUsed: {specific_used:0.2f} GB ({percentage_used}%) \nFree: {specific_free:0.2f} GB ({percentage_free}%)",
-        "unit": "GB"
-    },
-    "temperature": {
-        "format": "{icon} {temperatureC}°C",
-        "critical-threshold": 80,
-        "format-critical": "{icon} {temperatureC}°C",
-        "format-icons": [
-            "",
-            "",
-            "",
-            "",
-            ""
-        ]
-    },
     "cpu": {
         "format-icons": [
-            " "
+            ""
         ],
         "interval": 10,
         "format": "{icon} {usage}%"
     },
     "memory": {
         "format-icons": [
-            " "
+            ""
         ],
         "interval": 10,
         "format": "{icon} {percentage}%",
         "tooltip": true,
         "tooltip-format": "Total: {total:0.2f}GiB \nUsed: {used:0.2f}GiB \nAvailable: {avail:0.2f}GiB"
     },
-    "bluetooth": {
-        "format": "󰂯",
-        "format-disabled": "󰂲",
-        "format-off": "󰂲",
-        "format-connected": "󰂯",
-        "tooltip": true,
-        "tooltip-format": "{device_alias} {device_battery_percentage}%",
-        "tooltip-format-disabled": "Not connected",
-        "tooltip-format-off": "Bluetooth turned off"
-    },
     "pulseaudio": {
         "format": "󰕾 {volume}%",
-        "format-muted": "<span color='red'></span>",
+        "format-muted": "",
         "tooltip": true,
         "tooltip-format-muted": "muted",
         "on-click": "pavucontrol"
     },
-    "network": {
-        "format": "",
-        "format-disconnected": "󰖪",
-        "tooltip": true,
-        "tooltip-format-wifi": "{essid} ({signalStrength}%)",
-        "on-click": "nm-applet --indicator"
-    },
-    "backlight": {
-        "format": "<span color='yellow'></span>  {percent}%"
+    "tray": {
+        "spacing": 15,
+        "icon-size": 20,
     },
     "battery": {
         "bat": "BAT0",
@@ -120,12 +86,12 @@
             "warning": 30,
             "critical": 15
         },
-        "format-charging": "<span color='lightgreen'>{icon}</span> {capacity}%",
-        "format-discharging": "<span color='orange'>{icon}</span>  {capacity}%",
+        "format-charging": "{icon} {capacity}%",
+        "format-discharging": "{icon}  {capacity}%",
         "rotate": 0,
         /*"format-charging": "{icon} {capacity}%", */
         "format": "󱈑 {capacity}%",
-        "format-critical": "<span color='red'>󱃍</span> {capacity}%",
+        "format-critical": "󱃍 {capacity}%",
         "format-icons": {
             "discharging": [
                 "",
@@ -145,34 +111,9 @@
         }
     },
     "clock": {
-        "interval": 1,
-        "format": "  {:%H:%M}",
-        "format-alt": "  {:%A, %B %d, %Y}",
-        "tooltip-format": "<tt><small>{calendar}</small></tt>",
-        "calendar": {
-            "mode": "year",
-            "mode-mon-col": 3,
-            "weeks-pos": "right",
-            "on-scroll": 1,
-            "format": {
-                "months": "<span color='#ffead3'><b>{}</b></span>",
-                "days": "<span color='#ecc6d9'><b>{}</b></span>",
-                "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
-                "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
-                "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
-            }
-        },
-        "actions": {
-            "on-click-right": "mode",
-            "on-click-forward": "tz_up",
-            "on-click-backward": "tz_down",
-            "on-scroll-up": "shift_up",
-            "on-scroll-down": "shift_down"
-        }
-    },
-    "custom/arch": {
-        "format": "󰣇",
+        "interval": 60,
+        "format": "{:%A, %H:%M}",
         "tooltip": true,
-        "tooltip-format": "I Use Arch BTW",
+        "tooltip-format": "{:%B %d, %Y}",
     }
 }
