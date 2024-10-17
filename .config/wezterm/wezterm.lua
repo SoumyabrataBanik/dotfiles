@@ -15,7 +15,9 @@ config.window_background_opacity = 0.7
 config.enable_tab_bar = true
 
 -- Font
-config.font = wezterm.font("JetBrainsMono Nerd Font")
+config.font = wezterm.font(
+	"BerkeleyMonoVariableRoman Nerd Font Mono Plus Font Awesome Plus Font Awesome Extension Plus Octicons Plus Power Symbols Plus Codicons Plus Pomicons Plus Font Logos Plus Material Design Icons Plus Weather Icons"
+)
 config.freetype_load_target = "HorizontalLcd"
 config.font_size = 11.8
 

@@ -32,12 +32,18 @@ window#waybar.fullscreen {
     padding: 0;
 }
 
+#custom-arch {
+    margin-left: 10px;
+}
+
 #disk {
     padding: 0px 11px 0px 5px;
 }
 
 #clock {
     font-weight: bolder;
+    font-size: 14px;
+    margin-right: 10px;
 }
 
 #workspaces button {

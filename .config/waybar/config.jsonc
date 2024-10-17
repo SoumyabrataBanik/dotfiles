@@ -13,6 +13,7 @@
         "memory",
         "pulseaudio",
         "tray",
+        "backlight",
         "battery",
         "clock",
     ],
@@ -76,6 +77,9 @@
     "tray": {
         "spacing": 15,
         "icon-size": 20,
+    },
+    "backlight": {
+        "format": "  {percent}%"
     },
     "battery": {
         "bat": "BAT0",

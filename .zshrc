@@ -42,21 +42,17 @@ alias pi="sudo pacman -S"
 alias pu="sudo pacman -Syu"
 alias pss="pacman -Ss"
 alias pqi="pacman -Qi"
-alias pR="sudo pacman -R"
+alias pr="sudo pacman -R"
 
 #update and poweroff alias
 alias Poweroff="~/Scripts/update-system.sh"
 
 #yay aliases:
-alias yi="yay -S"
-alias yu="yay -Syu"
+alias ys="yay -S"
+alias yu="yay"
 alias yss="yay -Ss"
 alias yqi="yay -Qi"
-alias yR="yay -R"
-
-#bluetooth alias
-alias cbl="~/Scripts/connect-bluetooth.sh"
-alias dbl="~/Scripts/disconnect-bluetooth.sh"
+alias yr="yay -Rnscu"
 
 #alias to update mirror
 alias updateMirror="~/Scripts/update_mirrorlist.sh"
