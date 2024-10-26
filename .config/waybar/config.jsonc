@@ -1,23 +1,36 @@
 {
 	"layer": "top",
-	"position": "top",
+	"position": "bottom",
     "height": 32,
-    "spacing": 25,
+    "spacing": 20,
     "modules-left": [
         "custom/arch",
         "disk",
+        "custom/separator",
         "hyprland/workspaces",
+        "custom/separator",
+        "custom/onlyoffice",
+        "custom/stremio",
+        "custom/spotube"
+    ],
+    "modules-center": [
+        "hyprland/window",
     ],
     "modules-right": [
         "cpu",
         "memory",
+        "custom/separator",
         "pulseaudio",
         "tray",
+        "custom/separator",
         "backlight",
         "battery",
         "clock",
     ],
     
+    "custom/separator": {
+        "format": "<span font-size='x-large'>|</span>",
+    },
     "custom/arch": {
         "format": "<span font-size='x-large'>󰣇</span>",
         "tooltip": true,
@@ -30,10 +43,13 @@
         "tooltip-format": "Total: {specific_total:0.2f} GB.\nUsed: {specific_used:0.2f} GB ({percentage_used}%) \nFree: {specific_free:0.2f} GB ({percentage_free}%)",
         "unit": "GB"
     },
+    "hyprland/window": {
+        "format": "{title}",
+        "max-length": 50,
+    },
     "hyprland/workspaces": {
-        "format": "<span color='black'>{icon}</span>",
         "on-click": "activate",
-        "format-icons": {
+        /*"format-icons": {
             "1": "",
             "2": "",
             "3": "",
@@ -41,16 +57,31 @@
             "5": "",
             "urgent": "",
             "active": "",
-            "default": ""
-        },
+            "default": ""
+        },*/
         "persistent-workspaces": {
-            "1": [], 
-            "2": [], 
-            "3": [], 
-            "4": [], 
-            "5": [],
+            "*": 5,
         }
     },
+    "custom/onlyoffice": {
+        "format": "<span font-size='x-large'>󰧮</span>",
+        "tooltip": true,
+        "tooltip-format": "OnlyOffice Desktop Editor",
+        "on-click": "onlyoffice-desktopeditors"
+    },
+    "custom/stremio": {
+        "format": "<span font-size='x-large'>󰻏</span>",
+        "tooltip": true,
+        "tooltip-format": "Stremio",
+        "on-click": "stremio",
+    },
+    "custom/spotube": {
+        "format": "<span font-size='x-large'></span>",
+        "tooltip": true,
+        "tooltip-format": "Spotube",
+        "on-click": "spotube",
+    },
+
     "cpu": {
         "format-icons": [
             ""
@@ -69,7 +100,7 @@
     },
     "pulseaudio": {
         "format": "󰕾 {volume}%",
-        "format-muted": "",
+        "format-muted": "",
         "tooltip": true,
         "tooltip-format-muted": "muted",
         "on-click": "pavucontrol"
@@ -84,14 +115,14 @@
     "battery": {
         "bat": "BAT0",
         "adapter": "ACO",
-        "interval": 5,
+        "interval": 1,
         "states": {
             "good": 95,
             "warning": 30,
             "critical": 15
         },
-        "format-charging": "{icon} {capacity}%",
-        "format-discharging": "{icon}  {capacity}%",
+        "format-charging": "<span color='#9ccfd8'>{icon}</span> {capacity}%",
+        "format-discharging": "<span color='#ebbcba'>{icon}</span>  {capacity}%",
         "rotate": 0,
         /*"format-charging": "{icon} {capacity}%", */
         "format": "󱈑 {capacity}%",

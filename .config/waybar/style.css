@@ -1,4 +1,4 @@
-@import url("./dark-theme.css");
+@import url("./rosepine.css");
 
 * {
     border: 0;
@@ -10,8 +10,7 @@
 }
 
 window#waybar {
-    background-color: rgba(255, 255, 255, 0.3);
-    color: @background;
+    background-color: @base;
 }
 
 window#waybar.hidden {
@@ -26,37 +25,56 @@ window#waybar.fullscreen {
 #tray,
 #cpu,
 #memory,
-#pulseaudio,
 #clock,
 #battery {
     padding: 0;
 }
 
+#pulseaudio {
+    padding-right: 6px;
+}
+
 #custom-arch {
     margin-left: 10px;
+    color: @pine;
 }
 
 #disk {
     padding: 0px 11px 0px 5px;
-}
-
-#clock {
-    font-weight: bolder;
-    font-size: 14px;
-    margin-right: 10px;
+    color: @gold;
 }
 
 #workspaces button {
-    color: black;
-    margin: 0px 2px 0px 2px;
+    color: @text;
+    padding: 0px 5px 0px 5px;
 }
 
 #workspaces button.active {
-    color: @foreground;
+    background-color: @iris;
+    color: @highlightLow;
+    padding: 0px 10px 0px 10px;
 }
 
 #workspaces button.urgent {
-    color: @color1;
+    background-color: @love;
+}
+
+#custom-onlyoffice,
+#custom-stremio,
+#custom-spotube {
+    margin: 0;
+    padding: 0px 11px 0px 6px;
+}
+
+#custom-onlyoffice:hover,
+#custom-stremio:hover,
+#custom-spotube:hover {
+    background-color: @muted;
+    color: @text;
+}
+
+#window {
+    color: @foam;
 }
 
 #tray menu {
@@ -70,4 +88,18 @@ window#waybar.fullscreen {
 
 #tray>.passive {
     color: grey;
+}
+
+#clock {
+    font-weight: bolder;
+    font-size: 14px;
+    padding: 0 10px 0 10px;
+    background-color: @foam;
+    color: @highlightMed;
+}
+
+#custom-separator {
+    color: @subtle;
+    padding: 0;
+    margin: 0;
 }
