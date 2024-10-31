@@ -1,44 +1,65 @@
+@import "/home/soumyabrata/dotfiles/.config/waybar/rosepine.css";
+
 * {
-  background-image: none;
-  box-shadow: none;
+    background-image: none;
+    box-shadow: none;
 }
 
 window {
-  background-color: rgba(10, 10, 15, 0.8);
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 button {
-  border-radius: 50px;
-  border-color: #1a1a2e;
-  text-decoration-color: #8a2be2;
-  color: #e0e0e0;
-  background-color: rgba(26, 26, 46, 0.7);
-  border: 3px solid transparent;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 25%;
-  margin: 10px;
+    border-radius: 50px;
+    text-decoration-color: #8a2be2;
+    color: @text;
+    background-color: @love;
+    /*border: 3px solid transparent;*/
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20%;
+    margin: 10px;
 }
 
 button:active {
-  border: 3px solid #ff1493;
+    background-color: @pine;
 }
 
-button:hover,
+button:hover {
+    background-color: @iris;
+}
+
 button:focus {
-  border: 3px solid #4169e1;
+    background-color: @subtle;
+    color: @base;
 }
 
-#lock,
-#logout,
-#suspend,
-#hibernate,
-#shutdown,
+button:focus:hover {
+    color: @text;
+}
+
+#lock {
+    background-image: image(url("/usr/share/wlogout/icons/lock.png"), url("/usr/local/share/wlogout/icons/lock.png"));
+}
+
+#logout {
+    background-image: image(url("/usr/share/wlogout/icons/logout.png"), url("/usr/local/share/wlogout/icons/logout.png"));
+}
+
+#suspend {
+    background-image: image(url("/usr/share/wlogout/icons/suspend.png"), url("/usr/local/share/wlogout/icons/suspend.png"));
+}
+
+#hibernate {
+    background-image: image(url("/usr/share/wlogout/icons/hibernate.png"), url("/usr/local/share/wlogout/icons/hibernate.png"));
+}
+
+#shutdown {
+    background-image: image(url("/usr/share/wlogout/icons/shutdown.png"), url("/usr/local/share/wlogout/icons/shutdown.png"));
+}
+
 #reboot {
-  background-image: image(
-    url("/usr/share/wlogout/icons/lock.png"),
-    url("/usr/local/share/wlogout/icons/lock.png")
-  );
+    background-image: image(url("/usr/share/wlogout/icons/reboot.png"), url("/usr/local/share/wlogout/icons/reboot.png"));
 }
 
 #lock:hover,
@@ -47,5 +68,6 @@ button:focus {
 #hibernate:hover,
 #shutdown:hover,
 #reboot:hover {
-  background-color: rgba(74, 20, 140, 0.5);
+    /*background-color: rgba(74, 20, 140, 0.5);*/
+    color: @base;
 }

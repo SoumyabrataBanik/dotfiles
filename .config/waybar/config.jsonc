@@ -2,19 +2,21 @@
 	"layer": "top",
 	"position": "bottom",
     "height": 32,
-    "spacing": 20,
+    "spacing": 0,
     "modules-left": [
+        "custom/power",
         "custom/arch",
         "disk",
         "custom/separator",
         "hyprland/workspaces",
         "custom/separator",
-        "custom/onlyoffice",
-        "custom/stremio",
-        "custom/spotube"
     ],
     "modules-center": [
-        "hyprland/window",
+        "custom/onlyoffice",
+        "custom/stremio",
+        "custom/spotube",
+        "custom/yazi",
+        "custom/firefox",
     ],
     "modules-right": [
         "cpu",
@@ -26,13 +28,40 @@
         "backlight",
         "battery",
         "clock",
+        "custom/notification",
     ],
-    
+
+    "custom/power": {
+        "tooltip": false,
+        "format": "󰐥",
+        "on-click": "wlogout",
+    },
+
+    "custom/notification": {
+        "tooltip": false,
+        "format": "{icon}",
+        "format-icons": {
+            "notification": "<span foreground='red'><sup></sup></span>",
+            "none": "",
+            "dnd-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-none": "",
+            "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+            "inhibited-none": "",
+            "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-inhibited-none": ""
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+    }, 
     "custom/separator": {
-        "format": "<span font-size='x-large'>|</span>",
+        "format": "|",
     },
     "custom/arch": {
-        "format": "<span font-size='x-large'>󰣇</span>",
+        "format": "󰣇",
         "tooltip": true,
         "tooltip-format": "I use Arch BTW!"
     },
@@ -45,7 +74,7 @@
     },
     "hyprland/window": {
         "format": "{title}",
-        "max-length": 50,
+        "max-length": 100,
     },
     "hyprland/workspaces": {
         "on-click": "activate",
@@ -60,26 +89,38 @@
             "default": ""
         },*/
         "persistent-workspaces": {
-            "*": 5,
+            "*": 10,
         }
     },
     "custom/onlyoffice": {
-        "format": "<span font-size='x-large'>󰧮</span>",
+        "format": "󰧮",
         "tooltip": true,
         "tooltip-format": "OnlyOffice Desktop Editor",
         "on-click": "onlyoffice-desktopeditors"
     },
     "custom/stremio": {
-        "format": "<span font-size='x-large'>󰻏</span>",
+        "format": "󰻏",
         "tooltip": true,
         "tooltip-format": "Stremio",
         "on-click": "stremio",
     },
     "custom/spotube": {
-        "format": "<span font-size='x-large'></span>",
+        "format": "",
         "tooltip": true,
         "tooltip-format": "Spotube",
         "on-click": "spotube",
+    },
+    "custom/yazi": {
+        "format": "",
+        "tooltip": true,
+        "tooltip-format": "Directory Explorer",
+        "on-click": "kitty --start-as=fullscreen -e yazi",
+    },
+    "custom/firefox": {
+        "format": "",
+        "tooltip": true,
+        "tooltip-format": "Librewolf",
+        "on-click": "librewolf -P"
     },
 
     "cpu": {

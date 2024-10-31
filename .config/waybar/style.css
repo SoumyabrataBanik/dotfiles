@@ -34,9 +34,26 @@ window#waybar.fullscreen {
     padding-right: 6px;
 }
 
+#custom-power {
+    font-size: 1.5em;
+    background-color: @love;
+    padding: 0 0.8em 0 0.7em;
+    color: @base;
+    font-weight: bolder;
+}
+
+#custom-notification {
+    font-family: "NotoSansMono Nerd Font";
+    font-size: x-large;
+    background-color: @muted;
+    padding: 0px 0.4em 0px 0.5em;
+}
+
 #custom-arch {
-    margin-left: 10px;
+    margin-left: 0px;
+    padding: 0px 11px 0px 5px;
     color: @pine;
+    font-size: large;
 }
 
 #disk {
@@ -46,6 +63,7 @@ window#waybar.fullscreen {
 
 #workspaces button {
     color: @text;
+    margin: 0 0.15em 0 0.15em;
     padding: 0px 5px 0px 5px;
 }
 
@@ -61,14 +79,20 @@ window#waybar.fullscreen {
 
 #custom-onlyoffice,
 #custom-stremio,
-#custom-spotube {
-    margin: 0;
+#custom-spotube,
+#custom-firefox,
+#custom-yazi {
+    margin: 0 1em 0 1em;
     padding: 0px 11px 0px 6px;
+    font-size: large;
+    color: @foam;
 }
 
 #custom-onlyoffice:hover,
 #custom-stremio:hover,
-#custom-spotube:hover {
+#custom-spotube:hover,
+#custom-firefox:hover,
+#custom-yazi:hover {
     background-color: @muted;
     color: @text;
 }
@@ -101,5 +125,20 @@ window#waybar.fullscreen {
 #custom-separator {
     color: @subtle;
     padding: 0;
-    margin: 0;
+    /*margin: 0 1em 0 1em;*/
+}
+
+#custom-arch,
+#disk,
+#cpu,
+#memory,
+#pulseaudio,
+#workspaces,
+#tray,
+#backlight {
+    margin: 0 0.6em 0 0.6em;
+}
+
+#battery {
+    margin: 0 1em 0 0.6em;
 }

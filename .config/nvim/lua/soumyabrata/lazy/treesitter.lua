@@ -24,6 +24,8 @@ return {
 				"xml",
 				"http",
 				"sql",
+				"markdown",
+				"markdown_inline",
 			},
 			sync_install = false,
 			highlight = { enable = true },

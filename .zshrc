@@ -57,6 +57,9 @@ alias yr="yay -Rnscu"
 #alias to update mirror
 alias updateMirror="~/Scripts/update_mirrorlist.sh"
 
+#alias to exit terminal
+alias ":q"="exit"
+
 # paths:
 export PATH="$HOME/.tmuxifier/bin:$PATH"
 
@@ -75,6 +78,9 @@ export EDITOR=nvim
 
 #Brave alias
 alias brave="brave --password-store=basic"
+
+#Librewolf alias
+#alias librewolf="librewolf --ProfileManager"
 
 source $ZSH/oh-my-zsh.sh
 

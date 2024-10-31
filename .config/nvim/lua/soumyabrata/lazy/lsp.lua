@@ -56,6 +56,7 @@ return {
 			"pint",
 			"phpcs",
 			"psalm",
+			"marksman",
 		}
 		require("mason").setup()
 		require("mason-tool-installer").setup({
@@ -164,6 +165,12 @@ return {
 				["intelephense"] = function()
 					local lspconfig = require("lspconfig")
 					lspconfig.intelephense.setup({
+						capabilities = capabilities,
+					})
+				end,
+
+				["markdown_oxide"] = function()
+					require("lspconfig").markdown_oxide.setup({
 						capabilities = capabilities,
 					})
 				end,
