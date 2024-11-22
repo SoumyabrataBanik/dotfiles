@@ -60,11 +60,8 @@ alias updateMirror="~/Scripts/update_mirrorlist.sh"
 #alias to exit terminal
 alias ":q"="exit"
 
-# paths:
-export PATH="$HOME/.tmuxifier/bin:$PATH"
-
 #evaluate:
-eval "$(tmuxifier init -)"
+#eval "$(tmuxifier init -)"
 
 #tmuxifier alias:
 alias t="tmuxifier"
@@ -76,11 +73,11 @@ alias tls="tmuxifier ls"
 # editor
 export EDITOR=nvim
 
-#Brave alias
-alias brave="brave --password-store=basic"
-
-#Librewolf alias
-#alias librewolf="librewolf --ProfileManager"
+# paths:
+export PATH="$HOME/.tmuxifier/bin:$PATH"
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator 
+export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 source $ZSH/oh-my-zsh.sh
 

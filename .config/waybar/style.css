@@ -40,6 +40,7 @@ window#waybar.fullscreen {
     padding: 0 0.8em 0 0.7em;
     color: @base;
     font-weight: bolder;
+    border-top-right-radius: 0.5em;
 }
 
 #custom-notification {
@@ -67,14 +68,20 @@ window#waybar.fullscreen {
     padding: 0px 5px 0px 5px;
 }
 
-#workspaces button.active {
-    background-color: @iris;
-    color: @highlightLow;
-    padding: 0px 10px 0px 10px;
-}
-
 #workspaces button.urgent {
     background-color: @love;
+    border-radius: 50%;
+}
+
+#workspaces button.empty {
+    color: @muted;
+}
+
+#workspaces button.active {
+    background-color: @rose;
+    color: @highlightLow;
+    padding: 0px 10px 0px 10px;
+    border-radius: 0.5em;
 }
 
 #custom-onlyoffice,
@@ -85,7 +92,7 @@ window#waybar.fullscreen {
     margin: 0 1em 0 1em;
     padding: 0px 11px 0px 6px;
     font-size: large;
-    color: @foam;
+    color: @iris;
 }
 
 #custom-onlyoffice:hover,
@@ -118,8 +125,9 @@ window#waybar.fullscreen {
     font-weight: bolder;
     font-size: 14px;
     padding: 0 10px 0 10px;
-    background-color: @foam;
-    color: @highlightMed;
+    background-color: @pine;
+    color: @text;
+    border-top-left-radius: 0.5em;
 }
 
 #custom-separator {

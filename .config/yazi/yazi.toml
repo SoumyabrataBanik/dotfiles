@@ -5,16 +5,16 @@ linemode = "size_and_mtime"
 show_hidden = false
 
 [opener]
-#play = [
-#	{ run = 'vlc "$@"', orphan = true, for = "unix" },
-#]
-#edit = [
-#	{ run = 'vim "$@"', orphan = true, for = "unix" },
-#]
-#open = [
-#	{ run = 'xdg-open "$@"', desc = "Open" },
-#]
-word = [
+play = [
+	{ run = 'vlc "$@"', orphan = true, for = "unix" },
+]
+edit = [
+	{ run = 'vim "$@"', orphan = false, for = "unix", desc = "Open with vim" },
+]
+open = [
+	{ run = 'xdg-open "$@"', orphan = true, desc = "Open with xdg-open" },
+]
+opendocppt = [
     { run = 'onlyoffice-desktopeditors "$@"', orphan = true, desc = "Open word documents with Only Office" },
 ]
 pdf = [
@@ -23,7 +23,9 @@ pdf = [
 
 [open]
 rules = [
-#    { name = "*.txt", use = "edit" },
-    { name = "*.docx", use = "word" },
-    { name = "*.pdf", use = "pdf" }
+    { name = "*.txt", use = "edit" },
+    { name = "*.md", use = "edit" },
+    { name = "*.docx", use = "opendocppt" },
+    { name = "*.pdf", use = "pdf" },
+    { name = "*.pptx", use = "opendocppt" }
 ]

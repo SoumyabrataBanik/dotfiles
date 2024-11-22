@@ -119,8 +119,8 @@
     "custom/firefox": {
         "format": "",
         "tooltip": true,
-        "tooltip-format": "Librewolf",
-        "on-click": "librewolf -P"
+        "tooltip-format": "Floorp",
+        "on-click": "floorp -P"
     },
 
     "cpu": {
