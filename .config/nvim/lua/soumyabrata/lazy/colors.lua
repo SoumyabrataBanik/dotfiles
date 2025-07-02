@@ -1,28 +1,28 @@
-return {
-	"rose-pine/neovim",
-	name = "rose-pine",
-	config = function()
-		require("rose-pine").setup({
-			variant = "moon",
-			dim_inactive_windows = false,
-			extend_background_behind_borders = true,
-
-			enable = {
-				terminal = true,
-				legacy_highlights = true, -- Improve compatibility for previous versions of Neovim
-				migrations = true, -- Handle deprecated options automatically
-			},
-
-			styles = {
-				bold = true,
-				italic = false,
-				transparency = true,
-			},
-		})
-
-		vim.cmd.colorscheme("rose-pine")
-	end,
-}
+--return {
+--	"rose-pine/neovim",
+--	name = "rose-pine",
+--	config = function()
+--		require("rose-pine").setup({
+--			variant = "moon",
+--			dim_inactive_windows = false,
+--			extend_background_behind_borders = true,
+--
+--			enable = {
+--				terminal = true,
+--				legacy_highlights = true, -- Improve compatibility for previous versions of Neovim
+--				migrations = true, -- Handle deprecated options automatically
+--			},
+--
+--			styles = {
+--				bold = true,
+--				italic = false,
+--				transparency = true,
+--			},
+--		})
+--
+--		vim.cmd.colorscheme("rose-pine")
+--	end,
+--}
 
 --return {
 --	"sainnhe/sonokai",
@@ -99,3 +99,18 @@ return {
 --		vim.cmd.colorscheme("catppuccin")
 --	end,
 --}
+
+return {
+	"Mofiqul/dracula.nvim",
+	lazy = false,
+	priority = 1000,
+	config = function()
+		local dracula = require("dracula")
+		dracula.setup({
+			transparent_bg = true,
+			italic_comment = true,
+		})
+
+		vim.cmd.colorscheme("dracula")
+	end,
+}

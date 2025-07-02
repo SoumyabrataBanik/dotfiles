@@ -23,6 +23,9 @@ eval "$(starship init zsh)"
 # List of plugins used
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions zsh-completions)
 
+# Open Webui
+alias open-webui="DATA_DIR=~/.open-webui uvx --python 3.11 open-webui@latest serve"
+
 # nvim alias:
 alias n="nvim"
 alias vim="nvim"
@@ -69,6 +72,12 @@ alias tes="tmuxifier es"
 alias ts="tmuxifier s"
 alias tns="tmuxifier ns"
 alias tls="tmuxifier ls"
+
+#Disk Usage check
+alias checkdisk='du -ah $location | sort -rh | head -n 20'
+
+#shortcut to start SillyTavern
+alias ST="bash ~/SillyTavern/SillyTavern-release/start.sh"
 
 # editor
 export EDITOR=nvim

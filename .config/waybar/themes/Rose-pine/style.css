@@ -1,0 +1,152 @@
+@import url("./themes/dracula.css");
+
+* {
+    border: 0;
+    border-radius: 0;
+    font-size: 14px;
+    padding: 1px;
+    margin: 0;
+    font-family: JetBrainsMono Nerd Font;
+}
+
+window#waybar {
+    background-color: @base;
+}
+
+window#waybar.hidden {
+    opacity: 0;
+}
+
+window#waybar.fullscreen {
+    opacity: 0;
+}
+
+#custom-arch,
+#tray,
+#cpu,
+#memory,
+#clock,
+#battery {
+    padding: 0;
+}
+
+#pulseaudio {
+    padding-right: 6px;
+}
+
+#custom-power {
+    font-size: 1.5em;
+    background-color: @love;
+    padding: 0 0.8em 0 0.7em;
+    color: @base;
+    font-weight: bolder;
+    border-top-right-radius: 0.5em;
+}
+
+#custom-notification {
+    font-family: "NotoSansMono Nerd Font";
+    font-size: x-large;
+    background-color: @muted;
+    padding: 0px 0.4em 0px 0.5em;
+}
+
+#custom-arch {
+    margin-left: 0px;
+    padding: 0px 11px 0px 5px;
+    color: @pine;
+    font-size: large;
+}
+
+#disk {
+    padding: 0px 11px 0px 5px;
+    color: @gold;
+}
+
+#workspaces button {
+    color: @text;
+    margin: 0 0.15em 0 0.15em;
+    padding: 0px 5px 0px 5px;
+}
+
+#workspaces button.urgent {
+    background-color: @love;
+    border-radius: 50%;
+}
+
+#workspaces button.empty {
+    color: @muted;
+}
+
+#workspaces button.active {
+    background-color: @rose;
+    color: @highlightLow;
+    padding: 0px 10px 0px 10px;
+    border-radius: 0.5em;
+}
+
+#custom-onlyoffice,
+#custom-stremio,
+#custom-spotube,
+#custom-firefox,
+#custom-yazi {
+    margin: 0 1em 0 1em;
+    padding: 0px 11px 0px 6px;
+    font-size: large;
+    color: @iris;
+}
+
+#custom-onlyoffice:hover,
+#custom-stremio:hover,
+#custom-spotube:hover,
+#custom-firefox:hover,
+#custom-yazi:hover {
+    background-color: @muted;
+    color: @text;
+}
+
+#window {
+    color: @foam;
+}
+
+#tray menu {
+    border: 1px solid @foreground;
+    border-radius: 6px;
+}
+
+#tray>.active {
+    color: black;
+}
+
+#tray>.passive {
+    color: grey;
+}
+
+#clock {
+    font-weight: bolder;
+    font-size: 14px;
+    padding: 0 10px 0 10px;
+    background-color: @pine;
+    color: @text;
+    border-top-left-radius: 0.5em;
+}
+
+#custom-separator {
+    color: @subtle;
+    padding: 0;
+    /*margin: 0 1em 0 1em;*/
+}
+
+#custom-arch,
+#disk,
+#cpu,
+#memory,
+#pulseaudio,
+#workspaces,
+#tray,
+#backlight {
+    margin: 0 0.6em 0 0.6em;
+}
+
+#battery {
+    margin: 0 1em 0 0.6em;
+}

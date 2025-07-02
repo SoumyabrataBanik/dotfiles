@@ -1,0 +1,155 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 10,
+    "margin-top": 0,
+    "spacing": 10,
+    "modules-left": ["group/syslockoff", "disk", "hyprland/workspaces"],
+    "modules-center": ["group/hardware1", "group/hardware2"],
+    "modules-right": ["tray", "clock"],
+
+    "hyprland/workspaces": {
+        "persistent-workspaces": {
+            "*": 5,
+        }
+    },
+    "disk": {
+        "format": "  {percentage_used}% used",
+        "tooltip": true,
+        "tooltip-format": "{used} used out of {total}\nFree = {free} ({percentage_free}%)",
+        "unit": "GB"
+    },
+
+    "clock": {
+        "format": "  {:L%A, %H:%M}",
+        "format-alt": "  {:L%A, %B %d, %Y}",
+        "tooltip-format": "\n<span size='9pt'>{calendar}</span>",
+        "calendar": {
+            "mode"          : "year",
+            "mode-mon-col"  : 3,
+            "on-scroll"     : 1,
+            "format": {
+                      "months": "<span color='#ffead3'><b>{}</b></span>",
+                      "days":   "<span color='#ecc6d9'><b>{}</b></span>",
+                      "weeks":  "<span color='#99ffdd'><b>W{}</b></span>",
+                      "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+                      "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions":  {
+            "on-click-right": "mode",
+            "on-click-forward": "tz_up",
+            "on-click-backward": "tz_down",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
+    },
+
+    "group/hardware1": {
+        "orientation": "horizontal",
+        "modules": [
+            "cpu",
+            "memory",
+            "temperature",
+        ],
+    },
+    "group/hardware2": {
+        "orientation": "horizontal",
+        "modules": [
+            "pulseaudio",
+            "backlight",
+            "battery"
+        ]
+    },
+    "group/syslockoff": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/screenlock",
+            "custom/poweroff"
+        ]
+    },
+
+    "cpu": {
+        "format-icons": [
+            ""
+        ],
+        "interval": 10,
+        "format": "{icon} {usage}%"
+    },
+    "memory": {
+        "format-icons": [
+            ""
+        ],
+        "interval": 10,
+        "format": "{icon} {percentage}%",
+        "tooltip": true,
+        "tooltip-format": "Total: {total:0.2f}GiB \nUsed: {used:0.2f}GiB \nAvailable: {avail:0.2f}GiB"
+    },
+    "temperature": {
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "format": "{icon} {temperatureC}°C"
+    },
+    "pulseaudio": {
+        "format": "󰕾 {volume}%",
+        "format-muted": "",
+        "tooltip": true,
+        "tooltip-format-muted": "muted",
+        "on-click": "pavucontrol"
+    },
+    "tray": {
+        "spacing": 10,
+        "icon-size": 20,
+    },
+    "backlight": {
+        "format": " {percent}%"
+    },
+    "battery": {
+        "bat": "BAT0",
+        "adapter": "ACO",
+        "interval": 1,
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format-charging": "<span color='#50fa7b'>{icon} {capacity}%</span>",
+        "format-discharging": "<span color='#ffb86c'>{icon} {capacity}%</span>",
+        "rotate": 0,
+        /*"format-charging": "{icon} {capacity}%", */
+        "format": "󱈑 {capacity}%",
+        "format-critical": "<span color='#ff5555'>󱃍 {capacity}%</span>",
+        "format-icons": {
+            "discharging": [
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "charging": [
+                "󰢟",
+                "󰂆",
+                "󰂈",
+                "󰂉",
+                "󰂊",
+                "󰂅"
+            ],
+        }
+    },
+    "custom/screenlock": {
+        "format": "󰌾",
+        "on-click": "hyprlock",
+        "tooltip-format": "<span font-size='large'>Lock Screen</span>",
+    },
+    "custom/poweroff": {
+        "format": "󰐥",
+        "on-click": "systemctl poweroff",
+        "tooltip-format": "<span font-size='large'>Power Off</span>",
+    }
+}

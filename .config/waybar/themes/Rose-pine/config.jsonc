@@ -1,0 +1,195 @@
+{
+	"layer": "top",
+	"position": "bottom",
+    "height": 32,
+    "spacing": 0,
+    "modules-left": [
+        "custom/power",
+        "custom/arch",
+        "disk",
+        "custom/separator",
+        "hyprland/workspaces",
+        "custom/separator",
+    ],
+    "modules-center": [
+        "custom/onlyoffice",
+        "custom/stremio",
+        "custom/spotube",
+        "custom/yazi",
+        "custom/firefox",
+    ],
+    "modules-right": [
+        "cpu",
+        "memory",
+        "custom/separator",
+        "pulseaudio",
+        "tray",
+        "custom/separator",
+        "backlight",
+        "battery",
+        "clock",
+        "custom/notification",
+    ],
+
+    "custom/power": {
+        "tooltip": false,
+        "format": "󰐥",
+        "on-click": "wlogout",
+    },
+
+    "custom/notification": {
+        "tooltip": false,
+        "format": "{icon}",
+        "format-icons": {
+            "notification": "<span foreground='red'><sup></sup></span>",
+            "none": "",
+            "dnd-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-none": "",
+            "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+            "inhibited-none": "",
+            "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-inhibited-none": ""
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+    }, 
+    "custom/separator": {
+        "format": "|",
+    },
+    "custom/arch": {
+        "format": "󰣇",
+        "tooltip": true,
+        "tooltip-format": "I use Arch BTW!"
+    },
+    "disk": {
+        "format": "",
+        "path": "/",
+        "tooltip": true,
+        "tooltip-format": "Total: {specific_total:0.2f} GB.\nUsed: {specific_used:0.2f} GB ({percentage_used}%) \nFree: {specific_free:0.2f} GB ({percentage_free}%)",
+        "unit": "GB"
+    },
+    "hyprland/window": {
+        "format": "{title}",
+        "max-length": 100,
+    },
+    "hyprland/workspaces": {
+        "on-click": "activate",
+        /*"format-icons": {
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "",
+            "urgent": "",
+            "active": "",
+            "default": ""
+        },*/
+        "persistent-workspaces": {
+            "*": 10,
+        }
+    },
+    "custom/onlyoffice": {
+        "format": "󰧮",
+        "tooltip": true,
+        "tooltip-format": "OnlyOffice Desktop Editor",
+        "on-click": "onlyoffice-desktopeditors"
+    },
+    "custom/stremio": {
+        "format": "󰻏",
+        "tooltip": true,
+        "tooltip-format": "Stremio",
+        "on-click": "stremio",
+    },
+    "custom/spotube": {
+        "format": "",
+        "tooltip": true,
+        "tooltip-format": "Spotube",
+        "on-click": "spotube",
+    },
+    "custom/yazi": {
+        "format": "",
+        "tooltip": true,
+        "tooltip-format": "Directory Explorer",
+        "on-click": "kitty --start-as=fullscreen -e yazi",
+    },
+    "custom/firefox": {
+        "format": "",
+        "tooltip": true,
+        "tooltip-format": "Floorp",
+        "on-click": "floorp -P"
+    },
+
+    "cpu": {
+        "format-icons": [
+            ""
+        ],
+        "interval": 10,
+        "format": "{icon} {usage}%"
+    },
+    "memory": {
+        "format-icons": [
+            ""
+        ],
+        "interval": 10,
+        "format": "{icon} {percentage}%",
+        "tooltip": true,
+        "tooltip-format": "Total: {total:0.2f}GiB \nUsed: {used:0.2f}GiB \nAvailable: {avail:0.2f}GiB"
+    },
+    "pulseaudio": {
+        "format": "󰕾 {volume}%",
+        "format-muted": "",
+        "tooltip": true,
+        "tooltip-format-muted": "muted",
+        "on-click": "pavucontrol"
+    },
+    "tray": {
+        "spacing": 15,
+        "icon-size": 20,
+    },
+    "backlight": {
+        "format": "  {percent}%"
+    },
+    "battery": {
+        "bat": "BAT0",
+        "adapter": "ACO",
+        "interval": 1,
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format-charging": "<span color='#9ccfd8'>{icon}</span> {capacity}%",
+        "format-discharging": "<span color='#ebbcba'>{icon}</span>  {capacity}%",
+        "rotate": 0,
+        /*"format-charging": "{icon} {capacity}%", */
+        "format": "󱈑 {capacity}%",
+        "format-critical": "󱃍 {capacity}%",
+        "format-icons": {
+            "discharging": [
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "charging": [
+                "󰢟",
+                "󰂆",
+                "󰂈",
+                "󰂉",
+                "󰂊",
+                "󰂅"
+            ],
+        }
+    },
+    "clock": {
+        "interval": 60,
+        "format": "{:%A, %H:%M}",
+        "tooltip": true,
+        "tooltip-format": "{:%B %d, %Y}",
+    }
+}

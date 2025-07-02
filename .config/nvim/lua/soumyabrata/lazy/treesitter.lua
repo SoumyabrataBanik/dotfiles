@@ -26,6 +26,7 @@ return {
 				"sql",
 				"markdown",
 				"markdown_inline",
+				"tsx",
 			},
 			sync_install = false,
 			highlight = { enable = true },
@@ -38,6 +39,7 @@ return {
 				enable_rename = true,
 				enable_close_on_slash = true,
 			},
+			filetypes = { "tsx", "typescriptreact", "jsx", "javascriptreact", "html" },
 		})
 	end,
 }

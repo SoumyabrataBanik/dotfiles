@@ -1,0 +1,79 @@
+/* @define-color background #0a0707;
+@define-color foreground #b9b2ba;
+@define-color color0 #0a0707;
+@define-color color1 #22344C;
+@define-color color2 #444B5D;
+@define-color color3 #8E1410;
+@define-color color4 #AF150F;
+@define-color color5 #A02B27;
+@define-color color6 #C04B47;
+@define-color color7 #b9b2ba;
+@define-color color8 #817c82;
+@define-color color9 #22344C; */
+
+/* --- GTK THEME: "Crimson Arachnid" --- */
+/* Generated from the provided Spider-Man artwork. */
+
+/* --- Main UI Colors --- */
+/* These define the core look of your applications. */
+
+@define-color background #0a0707;
+/* The deep, near-black charcoal from the shadows */
+@define-color foreground #d8d5d9;
+/* The off-white highlight from the mask's eyes */
+@define-color cursor #d8d5d9;
+/* Same as foreground for high visibility */
+
+@define-color accent_color #AF150F;
+/* The iconic, vibrant red of the suit */
+@define-color selection_bg_color #22344C;
+/* Using the cool blue for selections for strong contrast */
+@define-color selection_fg_color #f0f0f5;
+/* A bright white for selected text */
+
+@define-color warning_color #C71F1F;
+/* A brighter, more intense red for alerts */
+@define-color error_color #C71F1F;
+/* Same as warning for consistency */
+@define-color success_color #22344C;
+/* The cool blue, as there is no green in the palette */
+
+
+/* --- Terminal Colors (ANSI) --- */
+/* A full 16-color palette for your terminal emulator. */
+
+/* Normal */
+@define-color color0 #0a0707;
+/* Black (same as background) */
+@define-color color1 #8E1410;
+/* Red (the darker, shadow red) */
+@define-color color2 #22344C;
+/* Green (using the theme's blue) */
+@define-color color3 #A02B27;
+/* Yellow (a muted, browner red from the suit) */
+@define-color color4 #365A8C;
+/* Blue (a slightly brighter, clearer blue) */
+@define-color color5 #AF150F;
+/* Magenta (the primary suit red) */
+@define-color color6 #444B5D;
+/* Cyan (the dark, slate-blue/gray highlight) */
+@define-color color7 #d8d5d9;
+/* White (same as foreground) */
+
+/* Bright */
+@define-color color8 #817c82;
+/* Bright Black (a medium gray from reflections) */
+@define-color color9 #C71F1F;
+/* Bright Red (the most intense, splattered red) */
+@define-color color10 #365A8C;
+/* Bright Green (using the brighter blue) */
+@define-color color11 #AF150F;
+/* Bright Yellow (the primary suit red) */
+@define-color color12 #5F83C4;
+/* Bright Blue (a vivid, lighter blue) */
+@define-color color13 #C04B47;
+/* Bright Magenta (a brighter, vibrant red) */
+@define-color color14 #89AEDC;
+/* Bright Cyan (a very light, almost-white blue) */
+@define-color color15 #f0f0f5;
+/* Bright White (the pure white reflection) */

@@ -23,7 +23,7 @@ config.font_size = 11.8
 
 -- Color Schemes
 config.color_scheme_dirs = { "~/dotfiles/.config/wezterm/themes" }
-config.color_scheme = "rose-pine"
+config.color_scheme = "Dracula"
 
 --window Padding
 config.window_padding = {

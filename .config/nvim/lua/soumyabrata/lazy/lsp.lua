@@ -29,6 +29,9 @@ return {
 			cmp_lsp.default_capabilities()
 		)
 
+		--Delete This if it stops working
+		capabilities.textDocument.completion.completionItem.snippetSupport = true
+
 		-- Fidget
 		require("fidget").setup()
 
@@ -50,13 +53,9 @@ return {
 			"jq",
 			"pylsp",
 			"black",
-			"yamlls",
-			"yamlfmt",
-			"intelephense",
 			"pint",
-			"phpcs",
-			"psalm",
 			"marksman",
+			"emmet-ls",
 		}
 		require("mason").setup()
 		require("mason-tool-installer").setup({
@@ -117,7 +116,6 @@ return {
 
 				["html"] = function()
 					local lspconfig = require("lspconfig")
-					capabilities.textDocument.completion.completionItem.snippetSupport = true
 					lspconfig.html.setup({
 						capabilities = capabilities,
 					})
@@ -125,7 +123,6 @@ return {
 
 				["cssls"] = function()
 					local lspconfig = require("lspconfig")
-					capabilities.textDocument.completion.completionItem.snippetSupport = true
 					lspconfig.cssls.setup({
 						capabilities = capabilities,
 					})
@@ -162,16 +159,24 @@ return {
 					})
 				end,
 
-				["intelephense"] = function()
-					local lspconfig = require("lspconfig")
-					lspconfig.intelephense.setup({
+				["markdown_oxide"] = function()
+					require("lspconfig").markdown_oxide.setup({
 						capabilities = capabilities,
 					})
 				end,
 
-				["markdown_oxide"] = function()
-					require("lspconfig").markdown_oxide.setup({
+				["emmet_ls"] = function()
+					require("lspconfig").emmet_ls.setup({
 						capabilities = capabilities,
+						filetypes = { "css", "html", "javascript", "typescriptreact", "javascriptreact" },
+						init_options = {
+							html = {
+								options = {
+									-- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
+									["bem.enabled"] = true,
+								},
+							},
+						},
 					})
 				end,
 			},
@@ -266,6 +271,27 @@ return {
 					quiet = true,
 				})
 			end,
+		})
+
+		-- Organize imports
+		local function organize_imports()
+			local params = {
+				command = "_typescript.organizeImports",
+				arguments = { vim.api.nvim_buf_get_name(0) },
+				title = "",
+			}
+			vim.lsp.buf.execute_command(params)
+		end
+
+		require("lspconfig").tsserver.setup({
+			-- on_attach = on_attach,
+			capabilities = capabilities,
+			commands = {
+				OrganizeImports = {
+					organize_imports,
+					description = "Organize Imports",
+				},
+			},
 		})
 	end,
 }

@@ -1,0 +1,137 @@
+@import url("themes/Dracula/dracula.css");
+
+* {
+  font-family: JetBrainsMono Nerd Font;
+  font-size: 12px;
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+}
+
+window#waybar {
+  background: rgba(255, 255, 255, 0);
+}
+
+tooltip {
+  background: @background;
+  border: 0.15em solid @purple;
+  border-radius: 0.5em;
+}
+
+tooltip label {
+  color: @cyan;
+}
+
+
+#clock,
+#disk,
+#workspaces,
+#hardware1,
+#tray,
+#hardware2,
+#syslockoff {
+  background-color: @background-darker;
+  border: 0.15em solid @purple;
+  border-radius: 20em;
+  padding: 0.15em 0em;
+}
+
+/*#workspaces {
+  background-color: @background-darker;
+  border-radius: 2em;
+  border: 0.2em solid @purple;
+  margin: 0;
+}*/
+
+#workspaces button {
+  padding: 0.2em 0.5em;
+  color: @orange;
+}
+
+#workspaces button.empty {
+  color: @comment;
+}
+
+#workspaces button.active {
+  background-color: @selection;
+  border-radius: 20em;
+  padding: 0em 0.5em;
+  color: @green;
+}
+
+#workspaces button.urgent {
+  background-color: @red;
+  border-radius: 20em;
+  color: @foreground;
+  padding: 0em 0.5em;
+  margin: 0em 0.5em 0em 0.5em;
+}
+
+#clock,
+#hardware1,
+#hardware2,
+#tray,
+#disk {
+  padding: 0em 1em;
+}
+
+#disk {
+  color: @green;
+}
+
+#clock {
+  color: @yellow;
+}
+
+#cpu,
+#memory,
+#pulseaudio,
+#backlight {
+  margin-right: 1em;
+}
+
+#pulseaudio {
+  padding: 0em 0em;
+}
+
+#pulseaudio.bluetooth {
+  color: @yellow;
+}
+
+#pulseaudio.muted {
+  padding: 0 0.5em;
+  color: @orange;
+}
+
+#hardware1 {
+  color: @cyan;
+}
+
+#hardware2 {
+  color: @foreground;
+}
+
+#temperature.critical {
+  color: @red;
+}
+
+#backlight {
+  color: @orange;
+}
+
+#syslockoff {
+  padding: 0em 1em;
+}
+
+#custom-screenlock {
+  font-size: 16px;
+  margin: 0em 0.5em 0em 0.2em;
+  color: @green;
+}
+
+#custom-poweroff {
+  font-size: 18px;
+  margin: 0em 0.2em 0em 0.5em;
+  padding: 0em 0.1em;
+  color: @red;
+}
