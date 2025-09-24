@@ -4,7 +4,7 @@
     "height": 10,
     "margin-top": 0,
     "spacing": 10,
-    "modules-left": ["group/syslockoff", "disk", "hyprland/workspaces", "group/tools"],
+    "modules-left": [ "disk", "hyprland/workspaces", "group/tools"],
     "modules-center": [],
     "modules-right": ["group/hardware1", "group/hardware2", "tray", "clock"],
 

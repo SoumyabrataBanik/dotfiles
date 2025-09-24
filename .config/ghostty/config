@@ -1,8 +1,10 @@
-font-family = "BerkeleyMono Nerd Font Mono Plus Font Awesome Plus Font Awesome Extension Plus Octicons Plus Power Symbols Plus Codicons Plus Pomicons Plus Font Logos Plus Material Design Icons Plus Weather Icons"
-
-theme = "Dracula+"
-
-window-decoration = false
+font-family = "JetBrainsMono Nerd Font"
 
 background-opacity = 0.8
 background-blur-radius = 30
+
+window-decoration = false
+window-padding-x = 10
+window-padding-y = 5
+
+theme = "Dracula+"

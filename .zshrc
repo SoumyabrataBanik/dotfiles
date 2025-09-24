@@ -13,12 +13,12 @@ fi
 # Path to your oh-my-zsh installation.
 ZSH=/usr/share/oh-my-zsh/
 
-#ZSH_THEME="awesomepanda"
+ZSH_THEME="awesomepanda"
 
 # Powerlevel10k
 #source ~/powerlevel10k/powerlevel10k.zsh-theme
 
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
 
 # List of plugins used
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions zsh-completions)
@@ -30,9 +30,6 @@ alias open-webui="DATA_DIR=~/.open-webui uvx --python 3.11 open-webui@latest ser
 alias n="nvim"
 alias vim="nvim"
 alias vi="nvim"
-
-#tree alias
-alias "treeal"="tree -a -L 2"
 
 #python aliases
 alias py="python3"
@@ -173,8 +170,6 @@ alias mkdir='mkdir -p'
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
-fastfetch
 
 # bun completions
 [ -s "/home/soumyabrata/.bun/_bun" ] && source "/home/soumyabrata/.bun/_bun"

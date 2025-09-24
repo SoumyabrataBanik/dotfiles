@@ -31,8 +31,12 @@ window#waybar {
   padding: 0em 0.1em;
 }
 
+#disk {
+  margin: 0em 0em 0em 1.5em;
+}
+
 #workspaces {
-  margin: 0em 2em;
+  margin: 0em 1em;
 }
 
 #workspaces button {
