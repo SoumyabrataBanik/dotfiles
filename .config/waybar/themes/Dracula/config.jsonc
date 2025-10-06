@@ -1,18 +1,59 @@
+// Configure inspired by Omarchy and DHH
+// Original Code can be found in the link below:
+// https://github.com/basecamp/omarchy/blob/master/config/waybar/config.jsonc
+
 {
     "layer": "top",
     "position": "top",
-    "height": 10,
+    "height": 23,
     "margin-top": 0,
     "spacing": 10,
-    "modules-left": ["group/syslockoff", "disk", "hyprland/workspaces"],
-    "modules-center": ["group/hardware1", "group/hardware2"],
-    "modules-right": ["tray", "clock"],
+    "modules-left": [ "custom/arch", "hyprland/workspaces"],
+    "modules-center": [ "clock" ],
+    "modules-right": [
+      "cpu",
+      "memory",
+      "temperature",
+      "pulseaudio",
+      "backlight",
+      "tray",
+      "battery",
+      "disk"
+    ],
 
     "hyprland/workspaces": {
+        "on-click": "activate",
+        "format": "{icon}",
+        "format-icons": {
+          "default": "",
+          "1": "1",
+          "2": "2",
+          "3": "3",
+          "4": "4",
+          "5": "5",
+          "6": "6",
+          "7": "7",
+          "8": "8",
+          "9": "9",
+          "10": "10",
+          // "active": "󱓻",
+          "active": "<span></span>"
+        },
         "persistent-workspaces": {
-            "*": 5,
+          "1": [],
+          "2": [],
+          "3": [],
+          "4": [],
+          "5": []
         }
     },
+
+    "custom/arch": {
+        "format": "<span font-size='x-large'>󰣇</span>",
+        "tooltip-format": "I USE ARCH BTW",
+        "on-click": "thunar"
+    },
+
     "disk": {
         "format": "  {percentage_used}% used",
         "tooltip": true,
@@ -45,33 +86,9 @@
         }
     },
 
-    "group/hardware1": {
-        "orientation": "horizontal",
-        "modules": [
-            "cpu",
-            "memory",
-            "temperature",
-        ],
-    },
-    "group/hardware2": {
-        "orientation": "horizontal",
-        "modules": [
-            "pulseaudio",
-            "backlight",
-            "battery"
-        ]
-    },
-    "group/syslockoff": {
-        "orientation": "horizontal",
-        "modules": [
-            "custom/screenlock",
-            "custom/poweroff"
-        ]
-    },
-
     "cpu": {
         "format-icons": [
-            ""
+            "󰍛"
         ],
         "interval": 10,
         "format": "{icon} {usage}%"
@@ -95,6 +112,7 @@
         ],
         "format": "{icon} {temperatureC}°C"
     },
+
     "pulseaudio": {
         "format": "󰕾 {volume}%",
         "format-muted": "",
@@ -102,9 +120,15 @@
         "tooltip-format-muted": "muted",
         "on-click": "pavucontrol"
     },
+
     "tray": {
-        "spacing": 10,
-        "icon-size": 20,
+        "spacing": 20,
+        "icon-size": 15,
+        "icons": {
+            "blueman": "/home/Soumyabrata/.local/share/icons/hicolor/16x16/bluetooth.png",
+            "nm-applet": "/home/Soumyabrata/.local/share/icons/hicolor/16x16/white-wifi.png",
+            "network": "/home/Soumyabrata/.local/share/icons/hicolor/16x16/white-wifi.png"
+        }
     },
     "backlight": {
         "format": " {percent}%"
@@ -115,15 +139,17 @@
         "interval": 1,
         "states": {
             "good": 95,
-            "warning": 30,
+            "warning": 50,
             "critical": 15
         },
-        "format-charging": "<span color='#50fa7b'>{icon} {capacity}%</span>",
-        "format-discharging": "<span color='#ffb86c'>{icon} {capacity}%</span>",
+        // "format-charging": "<span color='#50fa7b'>{icon} {capacity}%</span>",
+        "format-charging": "{icon} {capacity}%", 
+        // "format-discharging": "<span color='#ffb86c'>{icon} {capacity}%</span>",
+        "format-discharging": "{icon} {capacity}%",
         "rotate": 0,
         /*"format-charging": "{icon} {capacity}%", */
         "format": "󱈑 {capacity}%",
-        "format-critical": "<span color='#ff5555'>󱃍 {capacity}%</span>",
+        "format-critical": "󱃍 {capacity}%",
         "format-icons": {
             "discharging": [
                 "",
@@ -151,5 +177,17 @@
         "format": "󰐥",
         "on-click": "systemctl poweroff",
         "tooltip-format": "<span font-size='large'>Power Off</span>",
+    },
+    "custom/finder": {
+        "format": "Finder",
+        "on-click": "rofi -show drun"
+    },
+    "custom/drive": {
+        "format": "Drive",
+        "on-click": "kitty -e yazi /media/'Google Drive'"
+    },
+    "custom/browser": {
+        "format": "Browser",
+        "on-click": "zen-browser -P default"
     }
 }

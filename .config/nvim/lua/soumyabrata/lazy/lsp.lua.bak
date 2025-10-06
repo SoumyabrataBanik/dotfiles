@@ -20,7 +20,6 @@ return {
   config = function()
     local cmp = require("cmp")
     local cmp_lsp = require("cmp_nvim_lsp")
-    local lspconfig = vim.lsp.config
 
     -- Capabilities
     local capabilities = vim.tbl_deep_extend(
@@ -35,16 +34,6 @@ return {
 
     -- Fidget
     require("fidget").setup()
-
-    --Organize TS Imports
-    local function organize_imports()
-      local params = {
-        command = "_typescript.organizeImports",
-        arguments = { vim.api.nvim_buf_get_name(0) },
-        title = "",
-      }
-      vim.lsp.buf.execute_command(params)
-    end
 
     -- Mason
     local ensure_installed = {
@@ -64,6 +53,7 @@ return {
       "jq",
       "pylsp",
       "black",
+      "pint",
       "marksman",
       "emmet-ls",
     }
@@ -78,13 +68,13 @@ return {
     require("mason-lspconfig").setup({
       handlers = {
         function(server_name)
-          vim.lsp.config.server_name.setup({
+          require("lspconfig")[server_name].setup({
             capabilities = capabilities,
           })
         end,
 
-
         ["lua_ls"] = function()
+          local lspconfig = require("lspconfig")
           lspconfig.lua_ls.setup({
             capabilities = capabilities,
             settings = {
@@ -98,14 +88,9 @@ return {
         end,
 
         ["ts_ls"] = function()
+          local lspconfig = require("lspconfig")
           lspconfig.ts_ls.setup({
             capabilities = capabilities,
-            commands = {
-              OrganizeImports = {
-                organize_imports,
-                description = "Organize Imports",
-              },
-            },
             settings = {
               typescript = {
                 format = {
@@ -119,6 +104,7 @@ return {
         end,
 
         ["clangd"] = function()
+          local lspconfig = require("lspconfig")
           lspconfig.clangd.setup({
             capabilities = capabilities,
             cmd = {
@@ -129,30 +115,35 @@ return {
         end,
 
         ["html"] = function()
+          local lspconfig = require("lspconfig")
           lspconfig.html.setup({
             capabilities = capabilities,
           })
         end,
 
         ["cssls"] = function()
+          local lspconfig = require("lspconfig")
           lspconfig.cssls.setup({
             capabilities = capabilities,
           })
         end,
 
         ["tailwindcss"] = function()
+          local lspconfig = require("lspconfig")
           lspconfig.tailwindcss.setup({
             capabilities = capabilities,
           })
         end,
 
         ["bashls"] = function()
+          local lspconfig = require("lspconfig")
           lspconfig.bashls.setup({
             capabilities = capabilities,
           })
         end,
 
         ["pylsp"] = function()
+          local lspconfig = require("lspconfig")
           lspconfig.pylsp.setup({
             capabilities = capabilities,
             settings = {
@@ -169,13 +160,13 @@ return {
         end,
 
         ["markdown_oxide"] = function()
-          lspconfig.markdown_oxide.setup({
+          require("lspconfig").markdown_oxide.setup({
             capabilities = capabilities,
           })
         end,
 
         ["emmet_ls"] = function()
-          lspconfig.emmet_ls.setup({
+          require("lspconfig").emmet_ls.setup({
             capabilities = capabilities,
             filetypes = { "css", "html", "javascript", "typescriptreact", "javascriptreact" },
             init_options = {
@@ -280,6 +271,27 @@ return {
           quiet = true,
         })
       end,
+    })
+
+    -- Organize imports
+    local function organize_imports()
+      local params = {
+        command = "_typescript.organizeImports",
+        arguments = { vim.api.nvim_buf_get_name(0) },
+        title = "",
+      }
+      vim.lsp.buf.execute_command(params)
+    end
+
+    require("lspconfig").tsserver.setup({
+      -- on_attach = on_attach,
+      capabilities = capabilities,
+      commands = {
+        OrganizeImports = {
+          organize_imports,
+          description = "Organize Imports",
+        },
+      },
     })
   end,
 }

@@ -24,7 +24,10 @@ ZSH_THEME="awesomepanda"
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions zsh-completions)
 
 # Open Webui
-alias open-webui="DATA_DIR=~/.open-webui uvx --python 3.11 open-webui@latest serve"
+# alias ow="DATA_DIR=~/.open-webui uvx --python 3.11 open-webui@latest serve"
+alias webui-start="systemctl start open-webui.service"
+alias webui-status="systemctl status open-webui.service"
+alias webui-stop="systemctl stop open-webui.service"
 
 # nvim alias:
 alias n="nvim"
@@ -177,3 +180,4 @@ export SDKMAN_DIR="$HOME/.sdkman"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+[ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh

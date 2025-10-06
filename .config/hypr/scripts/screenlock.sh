@@ -1,3 +1,12 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-swaylock --image ~/dotfiles/wallpapers/lock_screen.jpeg --indicator-radius 120 --fade-in 1 --clock --indicator-image  ~/dotfiles/wallpapers/macos_sierra_glacier_mountains_snow_covered.jpg && systemctl suspend
+TEMP_DIR=/tmp/lockscreen
+TEMP_FILE=lockscreen.png
+
+mkdir -p $TEMP_DIR
+
+hyprshot -s -m window -m active -o $TEMP_DIR -f $TEMP_FILE
+
+sleep 0.5s
+
+hyprlock

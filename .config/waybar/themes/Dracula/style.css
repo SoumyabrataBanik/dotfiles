@@ -1,51 +1,53 @@
-@import url("themes/Dracula/dracula.css");
+@import url("themes/Dracula/colors.css");
 
 * {
-  font-family: JetBrainsMono Nerd Font;
-  font-size: 12px;
+  font-family: "MonaspiceXe Nerd Font";
+  font-size: 13px;
+  font-weight: 900;
   border: none;
   border-radius: 0;
   min-height: 0;
 }
 
 window#waybar {
-  background: rgba(255, 255, 255, 0);
-}
-
-tooltip {
   background: @background;
-  border: 0.15em solid @purple;
-  border-radius: 0.5em;
 }
 
-tooltip label {
+#custom-arch {
+  margin: 0em 0em 0em 1em;
   color: @cyan;
 }
 
-
-#clock,
-#disk,
-#workspaces,
-#hardware1,
-#tray,
-#hardware2,
-#syslockoff {
-  background-color: @background-darker;
-  border: 0.15em solid @purple;
-  border-radius: 20em;
-  padding: 0.15em 0em;
-}
-
-/*#workspaces {
-  background-color: @background-darker;
-  border-radius: 2em;
-  border: 0.2em solid @purple;
-  margin: 0;
+/*#syslockoff {
+  background: @accent_color;
+  margin: 0em 2em 0em 0em;
+  padding: 0em 1em 0em 0.5em;
+  color: @foreground;
 }*/
 
+/*#custom-poweroff {
+  font-size: 18px;
+  margin: 0em 0.5em 0em 0.5em;
+}
+
+#custom-screenlock {
+  font-size: 16px;
+  margin: 0em 0.2em 0em 0.5em;
+  padding: 0em 0.1em;
+}*/
+
+#disk {
+  margin: 0em 1.5em 0em 1em;
+  color: @cyan;
+}
+
+#workspaces {
+  margin: 0em 2em;
+}
+
 #workspaces button {
-  padding: 0.2em 0.5em;
-  color: @orange;
+  padding: 0.3em 0.5em;
+  color: @foreground;
 }
 
 #workspaces button.empty {
@@ -53,85 +55,78 @@ tooltip label {
 }
 
 #workspaces button.active {
-  background-color: @selection;
-  border-radius: 20em;
-  padding: 0em 0.5em;
-  color: @green;
+  font-size: 10px;
+  color: @pink;
 }
 
 #workspaces button.urgent {
-  background-color: @red;
-  border-radius: 20em;
-  color: @foreground;
-  padding: 0em 0.5em;
-  margin: 0em 0.5em 0em 0.5em;
-}
-
-#clock,
-#hardware1,
-#hardware2,
-#tray,
-#disk {
-  padding: 0em 1em;
-}
-
-#disk {
-  color: @green;
-}
-
-#clock {
-  color: @yellow;
+  background: @warning_color;
 }
 
 #cpu,
 #memory,
-#pulseaudio,
+#temperature,
 #backlight {
-  margin-right: 1em;
+  padding: 0em 0.5em;
 }
 
-#pulseaudio {
-  padding: 0em 0em;
+#cpu,
+#memory,
+#temperature {
+  color: @purple;
 }
 
-#pulseaudio.bluetooth {
+#backlight {
   color: @yellow;
 }
 
-#pulseaudio.muted {
-  padding: 0 0.5em;
-  color: @orange;
+#pulseaudio {
+  padding: 0em 0.5em 0em 0em;
+  color: @purple;
 }
 
-#hardware1 {
+#pulseaudio.muted {
+  font-size: 18px;
+  color: @comment;
+}
+
+#tray {
+  margin: 0em 0.5em;
+  padding: 0em 0.5em;
+}
+
+#tray menu {
+  border: 2px solid @purple;
+  border-radius: 5px;
   color: @cyan;
 }
 
-#hardware2 {
-  color: @foreground;
+#tray>.active {
+  color: @cyan;
 }
 
-#temperature.critical {
-  color: @red;
+#battery {
+  color: @comment;
 }
 
-#backlight {
+#battery.discharging,
+#battery.discharging.good {
+  color: @purple;
+}
+
+#battery.discharging.warning {
   color: @orange;
 }
 
-#syslockoff {
-  padding: 0em 1em;
+#battery.discharging.critical {
+  color: @red;
 }
 
-#custom-screenlock {
-  font-size: 16px;
-  margin: 0em 0.5em 0em 0.2em;
+#battery.charging {
   color: @green;
 }
 
-#custom-poweroff {
-  font-size: 18px;
-  margin: 0em 0.2em 0em 0.5em;
-  padding: 0em 0.1em;
-  color: @red;
+#clock {
+  margin: 0em 1em 0em 0em;
+  color: @purple;
 }
