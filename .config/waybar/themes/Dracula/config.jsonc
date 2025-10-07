@@ -138,7 +138,7 @@
         "adapter": "ACO",
         "interval": 1,
         "states": {
-            "good": 95,
+            "good": 99,
             "warning": 50,
             "critical": 15
         },
@@ -148,7 +148,8 @@
         "format-discharging": "{icon} {capacity}%",
         "rotate": 0,
         /*"format-charging": "{icon} {capacity}%", */
-        "format": "󱈑 {capacity}%",
+        // "format": "󱈑 {capacity}%",
+        "format": "",
         "format-critical": "󱃍 {capacity}%",
         "format-icons": {
             "discharging": [
