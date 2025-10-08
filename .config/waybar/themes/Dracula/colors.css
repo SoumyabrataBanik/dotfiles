@@ -1,3 +1,8 @@
+/*
+Colors borrowed from Dracula
+https://github.com/dracula/waybar
+*/
+
 @define-color background-darker rgba(30, 31, 41, 230);
 @define-color background #282a36;
 @define-color selection #44475a;
