@@ -26,7 +26,7 @@ plugins=(git zsh-syntax-highlighting zsh-autosuggestions zsh-completions)
 # Open Webui
 # alias ow="DATA_DIR=~/.open-webui uvx --python 3.11 open-webui@latest serve"
 alias webui-start="systemctl start open-webui.service"
-alias webui-status="systemctl status open-webui.service"
+alias webui-status="watch -n 1 'systemctl status open-webui.service'"
 alias webui-stop="systemctl stop open-webui.service"
 
 # nvim alias:
