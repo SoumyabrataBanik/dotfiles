@@ -8,7 +8,7 @@
     "height": 23,
     "margin-top": 0,
     "spacing": 10,
-    "modules-left": [ "custom/arch", "hyprland/workspaces"],
+    "modules-left": [ "disk", "hyprland/workspaces" ],
     "modules-center": [ "clock" ],
     "modules-right": [
       "cpu",
@@ -16,9 +16,9 @@
       "temperature",
       "pulseaudio",
       "backlight",
+      "network",
       "tray",
       "battery",
-      "disk"
     ],
 
     "hyprland/workspaces": {
@@ -50,12 +50,20 @@
 
     "custom/arch": {
         "format": "<span font-size='x-large'>󰣇</span>",
-        "tooltip-format": "I USE ARCH BTW",
+        "tooltip": true,
+        "tooltip-format": "{used} out of {total}",
         "on-click": "thunar"
     },
 
+    "custom/office": {
+        "format": "󰏆",
+        "tooltip": true,
+        "tooltip-format": "Open ONLYOFFICE",
+        "on-click": "onlyoffice-desktopeditors"
+    },
+
     "disk": {
-        "format": "  {percentage_used}% used",
+        "format": "<span font-size='x-large'>󰣇</span>",
         "tooltip": true,
         "tooltip-format": "{used} used out of {total}\nFree = {free} ({percentage_free}%)",
         "unit": "GB"
@@ -121,6 +129,15 @@
         "on-click": "pavucontrol"
     },
 
+    "network": {
+        "format": " {bandwidthUpBits}  {bandwidthDownBits}",
+        "format-disabled": "",
+        "format-disconnected": "",
+        "tooltip": true,
+        "tooltip-format": "{essid}",
+        "interval": 1
+    },
+
     "tray": {
         "spacing": 20,
         "icon-size": 15,
@@ -136,7 +153,7 @@
     "battery": {
         "bat": "BAT0",
         "adapter": "ACO",
-        "interval": 1,
+        "interval": 5,
         "states": {
             "good": 99,
             "warning": 50,

@@ -37,12 +37,12 @@ window#waybar {
 }*/
 
 #disk {
-  margin: 0em 1.5em 0em 1em;
+  margin: 0em 2em 0em 1em;
   color: @cyan;
 }
 
 #workspaces {
-  margin: 0em 2em;
+  margin: 0em 0.5em;
 }
 
 #workspaces button {
@@ -129,4 +129,9 @@ window#waybar {
 #clock {
   margin: 0em 1em 0em 0em;
   color: @purple;
+}
+
+#custom-office {
+  font-size: large;
+  color: @cyan;
 }
