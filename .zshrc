@@ -77,7 +77,7 @@ alias tls="tmuxifier ls"
 alias checkdisk='du -ah $location | sort -rh | head -n 20'
 
 #shortcut to start SillyTavern
-alias ST="bash ~/SillyTavern/SillyTavern-release/start.sh"
+alias ST="bash ~/SillyTavern/start.sh"
 
 # editor
 export EDITOR=nvim

@@ -37,12 +37,12 @@ window#waybar {
 }*/
 
 #disk {
-  margin: 0em 2em 0em 1em;
+  margin: 0em 1em 0em 1em;
   color: @cyan;
 }
 
 #workspaces {
-  margin: 0em 0.5em;
+  margin: 0em 0em;
 }
 
 #workspaces button {
@@ -106,19 +106,25 @@ window#waybar {
 }
 
 #battery {
+  padding: 0em 1em 0em 0;
   color: @comment;
 }
 
-#battery.discharging,
+#battery.discharging {
+  color: @purple;
+}
+
 #battery.discharging.good {
   color: @purple;
 }
 
 #battery.discharging.warning {
+  background: @background-darker;
   color: @orange;
 }
 
 #battery.discharging.critical {
+  background: @background-darker;
   color: @red;
 }
 
